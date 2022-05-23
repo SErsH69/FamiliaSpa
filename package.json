@@ -1,0 +1,22 @@
+{
+  "name": "familiaspa",
+  "version": "1.0.0",
+  "description": "1. npm init\r 2. npm install node-sass\r 3. package.json => scripts => \"dev\": \"node-sass --watch scss -o css\"\r 4. npm run dev# FamiliaSpa",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node-sass --watch scss -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SErsH69/FamiliaSpa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SErsH69/FamiliaSpa/issues"
+  },
+  "homepage": "https://github.com/SErsH69/FamiliaSpa#readme",
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
