@@ -10,11 +10,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Forum&family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAACHCJdlgAEGcD_flKUFEmVhT2yXp_ZAY8_ufC3CFXhHIE1NvwkxTeukKcKHF3ezmjTB0q6gzSBmoIUQ"
+            type="text/javascript"></script>
+    <script type="text/javascript">
+ 
+    function initialize() {
+      if (GBrowserIsCompatible()) {
+        var map = new GMap2(document.getElementById("map_canvas"));
+        map.setCenter(new GLatLng(56.32811,44.0), 10);
+      }
+    }
+ 
+    </script>
     <script src="js/main.js"></script>
 </head>
 <body>
     <div class="wrapper"> 
-        <header class="header">
+        <!-- <header class="header">
             <div class="header__bg"><img src="img/first_img.jpg" alt=""></div>
             <div class="header__mob"><img src="img/first_img_mob.jpg" alt=""></div>
             <div class="header__in center_block">
@@ -83,9 +95,24 @@
                     </div>
                 </div>
             </div>
-        </header>
+        </header> -->
         <main class="content">
-
+            <div class="main__contacts">
+                <div class="main__contacts__title center_block">Контакты</div>
+                <div class="main__contacts__blocks center_block">
+                    <div class="main__contacts__l-side">
+                        <a href="tel:79086414578" class="main__contacts__tel">+7‒908‒641‒45‒78</a>
+                        <a href="mailto:info@familiaspa.ru" class="main__contacts__mail">info@familiaspa.ru</a>
+                    </div>
+                    <div class="main__contacts__r-side">
+                        <div class="main__contacts__address">г. Иркутск, ул. 6-ая Советская, 80/1</div>
+                        <div class="main__contacts__work">Пн-Вс с 10:00 до 21:00</div>
+                    </div>
+                </div>
+                <div class="main__contacts__map">
+                    <div id="map_canvas" style="width: 500px; height: 300px"></div>
+                </div>
+            </div>
         </main>
         <footer class="footer">
             <div class="footer__in center_block">
