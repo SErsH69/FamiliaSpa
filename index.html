@@ -8,25 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Forum&family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAACHCJdlgAEGcD_flKUFEmVhT2yXp_ZAY8_ufC3CFXhHIE1NvwkxTeukKcKHF3ezmjTB0q6gzSBmoIUQ"
-            type="text/javascript"></script>
-    <script type="text/javascript">
- 
-    function initialize() {
-      if (GBrowserIsCompatible()) {
-        var map = new GMap2(document.getElementById("map_canvas"));
-        map.setCenter(new GLatLng(56.32811,44.0), 10);
-      }
-    }
- 
-    </script>
-    <script src="js/main.js"></script>
+    <!-- <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCc50gecOagVOxPyz5WDo1FWWcLra-ct3g&language=ru"></script> -->
+    <script src="//maps.googleapis.com/maps/api/js?v=3"></script>
+    <script src="js/slick.min.js"></script>
 </head>
 <body>
     <div class="wrapper"> 
-        <!-- <header class="header">
+        <header class="header">
             <div class="header__bg"><img src="img/first_img.jpg" alt=""></div>
             <div class="header__mob"><img src="img/first_img_mob.jpg" alt=""></div>
             <div class="header__in center_block">
@@ -95,8 +86,136 @@
                     </div>
                 </div>
             </div>
-        </header> -->
+        </header>
         <main class="content">
+            <div class="main_services">
+                <div class="main_services__title center_block">Услуги</div>
+                <div class="main_services__blocks">
+                    <div class="main_services__block">
+                        <div class="main_services__l-side">
+                            <img src="img/serv1.jpg" alt="">
+                        </div>
+                        <div class="main_services__r-side">
+                            <div class="main_services__tit">Массаж <br> лица </div>
+                            <div class="main_services__info">
+                                <div class="main_services__time">45 минут</div>
+                                <div class="main_services__price">от 15 000 Руб.</div>
+                            </div>
+                            <div class="main_services__text">Противоположная точка зрения подразумевает, что элементы политического процесса набирают популярность среди определенных слоев населения, а значит, должны быть своевременно верифицированы. Но постоянный количественный.</div>
+                            <a href="#" class="main_services__more">Подробнее</a>
+                        </div>
+                    </div>
+                    <div class="main_services__block">
+                        <div class="main_services__l-side">
+                            <img src="img/serv2.jpg" alt="">
+                        </div>
+                        <div class="main_services__r-side">
+                            <div class="main_services__tit">Массаж <br> тела</div>
+                            <div class="main_services__info">
+                                <div class="main_services__time">45 минут</div>
+                                <div class="main_services__price">от 15 000 Руб.</div>
+                            </div>
+                            <div class="main_services__text">Противоположная точка зрения подразумевает, что элементы политического процесса набирают популярность среди определенных слоев населения, а значит, должны быть своевременно верифицированы. Но постоянный количественный.</div>
+                            <a href="#" class="main_services__more">Подробнее</a>
+                        </div>
+                    </div>
+                    <div class="main_services__block">
+                        <div class="main_services__l-side">
+                            <img src="img/serv3.jpg" alt="">
+                        </div>
+                        <div class="main_services__r-side">
+                            <div class="main_services__tit">Коллекция уходов <br> для тела</div>
+                            <div class="main_services__info">
+                                <div class="main_services__time">45 минут</div>
+                                <div class="main_services__price">от 15 000 Руб.</div>
+                            </div>
+                            <div class="main_services__text">Танец рук как оружие с преждевременным старением</div>
+                            <a href="#" class="main_services__more">Подробнее</a>
+                        </div>
+                    </div>
+                    <div class="main_services__block">
+                        <div class="main_services__l-side">
+                            <img src="img/serv4.jpg" alt="">
+                        </div>
+                        <div class="main_services__r-side">
+                            <div class="main_services__tit">Коллекция уходов <br> для лица</div>
+                            <div class="main_services__info">
+                                <div class="main_services__time">45 минут</div>
+                                <div class="main_services__price">от 15 000 Руб.</div>
+                            </div>
+                            <div class="main_services__text">Противоположная точка зрения подразумевает, что элементы политического процесса набирают популярность среди определенных слоев населения, а значит, должны быть своевременно верифицированы. Но постоянный количественный.</div>
+                            <a href="#" class="main_services__more">Подробнее</a>
+                        </div>
+                    </div>
+                    <div class="main_services__block">
+                        <div class="main_services__l-side">
+                            <img src="img/serv5.jpg" alt="">
+                        </div>
+                        <div class="main_services__r-side">
+                            <div class="main_services__tit">Пилинг-уходы <br> для лица и шеи</div>
+                            <div class="main_services__info">
+                                <div class="main_services__time">45 минут</div>
+                                <div class="main_services__price">от 15 000 Руб.</div>
+                            </div>
+                            <div class="main_services__text">Танец рук как оружие с преждевременным старением</div>
+                            <a href="#" class="main_services__more">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main_rev">
+                <div class="main_rev__in center_block">
+                    <div class="main_rev__title">Отзывы</div>
+                    <div class="main_rev__blocks js_rev_sl">
+                        <div class="main_rev__block">
+                            <div class="main_rev__text">Противоположная точка зрения подразумевает, что элементы политического процесса набирают популярность среди определенных слоев населения, а значит, должны быть своевременно верифицированы. Но постоянный количественный.</div>
+                            <div class="main_rev__info">
+                                <div class="main_rev__img"><img src="img/rev1.png" alt=""></div>
+                                <div class="main_rev__texts">
+                                    <div class="main_rev__name">Алёна Прокопьева</div>
+                                    <div class="main_rev__logo"><img src="img/rev2.png" alt=""></div>
+                                </div>
+                                <a href="#" class="main_rev__more">Подробнее</a>
+                            </div>
+                        </div>
+                        <div class="main_rev__block">
+                            <div class="main_rev__text">Противоположная точка зрения подразумевает, что элементы политического процесса набирают популярность среди определенных слоев населения, а значит, должны быть своевременно верифицированы. Но постоянный количественный.</div>
+                            <div class="main_rev__info">
+                                <div class="main_rev__img"><img src="img/rev1.png" alt=""></div>
+                                <div class="main_rev__texts">
+                                    <div class="main_rev__name">Алёна Прокопьева</div>
+                                    <div class="main_rev__logo"><img src="img/rev2.png" alt=""></div>
+                                </div>
+                                <a href="#" class="main_rev__more">Подробнее</a>
+                            </div>
+                        </div>
+                        <div class="main_rev__block">
+                            <div class="main_rev__text">Противоположная точка зрения подразумевает, что элементы политического процесса набирают популярность среди определенных слоев населения, а значит, должны быть своевременно верифицированы. Но постоянный количественный.</div>
+                            <div class="main_rev__info">
+                                <div class="main_rev__img"><img src="img/rev1.png" alt=""></div>
+                                <div class="main_rev__texts">
+                                    <div class="main_rev__name">Алёна Прокопьева</div>
+                                    <div class="main_rev__logo"><img src="img/rev2.png" alt=""></div>
+                                </div>
+                                <a href="#" class="main_rev__more">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="count"></div>
+                </div>
+            </div>
+            <div class="main_text center_block">
+                <div class="main_text__l-side">
+                    <div class="main_text__title">О SPA-салоне <br> Familia Spa</div>
+                    <div class="main_text__info">
+                        <div class="main_text__text">Ясность нашей позиции очевидна: курс на социально-ориентированный национальный проект обеспечивает актуальность укрепления моральных ценностей. С другой стороны, курс на социально-ориентированный национальный проект позволяет выполнить важные задания по разработке новых предложений. В рамках спецификации современных стандартов, реплицированные с зарубежных источников, современные исследования функционально разнесены на независимые элементы.</div>
+                        <a href="#" class="main_text__more">Подробнее</a>
+                    </div>
+                </div>
+                <div class="main_text__r-side">
+                    <img src="img/abt1.jpg" alt="">
+                </div>
+            </div>
             <div class="main__contacts">
                 <div class="main__contacts__title center_block">Контакты</div>
                 <div class="main__contacts__blocks center_block">
@@ -110,7 +229,20 @@
                     </div>
                 </div>
                 <div class="main__contacts__map">
-                    <div id="map_canvas" style="width: 500px; height: 300px"></div>
+                    <script type="text/javascript">
+                            mjsMap({
+                                data: [
+                                    {
+                                        name: "Familia SPA", 
+                                        coords: "52.268705, 104.319126"
+                                    }
+                                ],
+                                zoom: "10",
+                                center: "52.268705, 104.319126",
+                                id: 'myMap'
+                            })
+                    </script>
+                    <div id="myMap" class="mapBlock" style="height: 800px;"></div>
                 </div>
             </div>
         </main>
@@ -155,5 +287,6 @@
             </div>
         </footer>
     </div>
+    <script src="js/main.js"></script>
 </body>
 </html>

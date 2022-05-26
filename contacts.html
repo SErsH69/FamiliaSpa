@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!-- <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCc50gecOagVOxPyz5WDo1FWWcLra-ct3g&language=ru"></script> -->
+    <script src="//maps.googleapis.com/maps/api/js?v=3"></script>
+    <script src="js/slick.min.js"></script>
+</head>
+<body class="contacts">
+    <div class="wrapper"> 
+        <header class="header">
+            <div class="header__bg"><img src="img/first_img.jpg" alt=""></div>
+            <div class="header__mob"><img src="img/first_img_mob.jpg" alt=""></div>
+            <div class="header__in center_block">
+                <div class="header__top">
+                    <a href="#" class="header__logo"><img src="img/footer_logo.svg" alt=""></a>
+                    <div class="site-panel-wrap">
+                        <div class="burger-wrap">
+                            <div class="burger-btn">меню</div>
+                            <div class="burger-body">
+                                <div class="burger-body__in center_block">
+                                    <div class="burger-body__top">
+                                        <a href="#" class="header__logo"><img src="img/footer_logo.svg" alt=""></a>
+                                        <div class="burger-close-btn">закрыть</div>
+                                    </div>
+                                    <div class="burger-body__bottom">
+                                        <div class="burger-body__info">
+                                            <nav class="burger-body__menu">
+                                                <ul>
+                                                    <li><a href="#">Главная</a></li>
+                                                    <li><a href="#">Услуги</a></li>
+                                                    <li><a href="#">О компании</a></li>
+                                                    <li><a href="#">Наша команда</a></li>
+                                                    <li><a href="#">Акции</a></li>
+                                                    <li><a href="#">Подарочные сертификаты</a></li>
+                                                    <li><a href="#">Контакты</a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                        <div class="burger-body__contacts">
+                                            <a href="tel:+7‒908‒641‒45‒78" class="burger-body__tel">+7‒908‒641‒45‒78</a>
+                                            <a href="mailto:info@familiaspa.ru" class="burger-body__mail">info@familiaspa.ru</a>
+                                            <div class="burger-body__address">г. Иркутск, ул. 6-ая Советская, 80/1</div>
+                                            <div class="burger-body__work">Пн-Вс с 10:00 до 21:00</div>
+                                            <div class="burger-body__socs">
+                                                <a href="#" target="_blank" rel="noopener noreferrer" class="header__soc">
+                                                    <img src="img/icon_vk.svg" alt="Вконтакте">
+                                                    <span>Вконтакте</span>
+                                                </a>
+                                                <a href="#" target="_blank" rel="noopener noreferrer" class="header__soc">
+                                                    <img src="img/icon_wp.svg" alt="WhatsApp">
+                                                    <span>WhatsApp</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>      
+                </div>
+                <div class="breadcrums">
+                    <a href="/">Главная</a><span class="breadcrums__splash">/</span>Контакты 
+                </div>
+                <div class="header__bottom">
+                    <h1 class="header__h1">Контакты</h1>
+                    <div class="main__contacts__blocks center_block">
+                        <div class="main__contacts__l-side">
+                            <a href="tel:79086414578" class="main__contacts__tel">+7‒908‒641‒45‒78</a>
+                            <a href="mailto:info@familiaspa.ru" class="main__contacts__mail">info@familiaspa.ru</a>
+                        </div>
+                        <div class="main__contacts__r-side">
+                            <div class="main__contacts__address">г. Иркутск, ул. 6-ая Советская, 80/1</div>
+                            <div class="main__contacts__work">Пн-Вс с 10:00 до 21:00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="main__contacts">
+                <div class="main__contacts__map">
+                    <script type="text/javascript">
+                            mjsMap({
+                                data: [
+                                    {
+                                        name: "Familia SPA", 
+                                        coords: "52.268705, 104.319126"
+                                    }
+                                ],
+                                zoom: "10",
+                                center: "52.268705, 104.319126",
+                                id: 'myMap'
+                            })
+                    </script>
+                    <div id="myMap" class="mapBlock" style="height: 800px;"></div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer__in center_block">
+                <div class="footer__top">
+                    <a href="#" class="footer__logo"><img src="img/footer_logo.svg" alt=""></a>
+                    <div class="footer__nav">
+                        <ul>
+                            <li><a href="#">Главная</a></li>
+                            <li><a href="#">Услуги</a></li>
+                            <li><a href="#">Контакты</a></li>
+                            <li><a href="#">О компании</a></li>
+                            <li><a href="#">Прайс</a></li>
+                            <li><a href="#">Наша команда</a></li>
+                            <li><a href="#">Акции</a></li>
+                            <li><a href="#">Подарочные сертификаты</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__contacts">
+                        <div class="footer__title">Контакты</div>
+                        <a href="tel:+7‒908‒641‒45‒78" class="footer__tel">+7‒908‒641‒45‒78</a>
+                        <a href="mailto:info@familiaspa.ru" class="footer__mail">info@familiaspa.ru</a>
+                        <div class="footer__address">г. Иркутск, ул. 6-ая Советская, 80/1</div>
+                        <div class="footer__work">Пн-Вс с 10:00 до 21:00</div>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <div class="footer__copy">©2022 Familia Spa</div>
+                    <a href="#" class="footer__link">Политика конфидициальности</a>
+                    <div class="footer__socs">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="footer__soc">
+                            <img src="img/icon_vk.svg" alt="Вконтакте">
+                            <span>Вконтакте</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="footer__soc">
+                            <img src="img/icon_wp.svg" alt="WhatsApp">
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
