@@ -2688,7 +2688,7 @@ textarea {
     &__img {
         border-radius: 10px;
         overflow: hidden;
-        height: 328px;
+        // height: 328px;
         margin-bottom: 30px;
 
         @media all and (max-width: 1023px) {
@@ -2721,7 +2721,7 @@ textarea {
 
     &__slider {
         .slick-track {
-            padding: 60px 0;
+            padding: 85px 0;
 
             @media all and (max-width: 1023px) {
                 padding: 0;
@@ -2733,12 +2733,15 @@ textarea {
         position: relative;
         transition: all .3s ease-out;
 
-        &.slick-current.slick-active.slick-center {
-            transform: translateY(-60px);
+        &.slick-active ~ .slick-active {
+            transform: translateY(-60px) translateX(30px) scale(1.1);
 
             @media all and (max-width: 1023px) {
                 transform: unset;
             }
+        }
+        &.slick-active ~ .slick-active ~ .slick-active {
+            transform: translateX(60px);
         }
     }
 }

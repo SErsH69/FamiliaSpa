@@ -1998,7 +1998,6 @@ textarea {
   .main_serv__img {
     border-radius: 10px;
     overflow: hidden;
-    height: 328px;
     margin-bottom: 30px; }
     @media all and (max-width: 1023px) {
       .main_serv__img {
@@ -2021,18 +2020,20 @@ textarea {
     font-size: 16px;
     color: #FFFFFF; }
   .main_serv__slider .slick-track {
-    padding: 60px 0; }
+    padding: 85px 0; }
     @media all and (max-width: 1023px) {
       .main_serv__slider .slick-track {
         padding: 0; } }
   .main_serv__block {
     position: relative;
     transition: all .3s ease-out; }
-    .main_serv__block.slick-current.slick-active.slick-center {
-      transform: translateY(-60px); }
+    .main_serv__block.slick-active ~ .slick-active {
+      transform: translateY(-60px) translateX(30px) scale(1.1); }
       @media all and (max-width: 1023px) {
-        .main_serv__block.slick-current.slick-active.slick-center {
+        .main_serv__block.slick-active ~ .slick-active {
           transform: unset; } }
+    .main_serv__block.slick-active ~ .slick-active ~ .slick-active {
+      transform: translateX(60px); }
 
 .scroller {
   height: 100vh; }

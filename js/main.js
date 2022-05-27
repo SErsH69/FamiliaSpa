@@ -63,10 +63,10 @@ $(function () {
         }, ]
     });
     $('.slider-for').slick({
-        centerMode: true,
+        // centerMode: true,
         slidesToShow: 3,
         arrows: false,
-        variableWidth: true,
+        // variableWidth: true,
         asNavFor: '.slider-nav',
         responsive: [{
             breakpoint: 1024,
@@ -153,6 +153,18 @@ $(function () {
                 return ((window.innerHeight / 100 * 15) + headerTextHeight) * -1;
             }
         })
+        gsap.to('.header--animated .breadcrums', {
+            scrollTrigger: {
+                trigger: '.header--animated .header',
+                start: 'bottom bottom',
+                end: 'bottom top',
+                scrub: 2,
+                // markers: true
+            },
+            y: '5vh'
+        })
     }
-    initAnimation();
+    if (window.innerWidth > 1023) {
+        initAnimation();
+    }
 });
