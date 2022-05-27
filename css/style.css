@@ -403,7 +403,8 @@ textarea {
     border-radius: 10px;
     position: relative;
     z-index: 2;
-    margin-right: 110px; }
+    margin-right: 110px;
+    transform: translateY(200px); }
     .main_services__l-side:before {
       content: '';
       position: absolute;
@@ -445,7 +446,8 @@ textarea {
   .main_services__r-side {
     width: calc(100% - 42% - 110px);
     position: relative;
-    z-index: 3; }
+    z-index: 3;
+    transform: translateY(500px); }
     @media all and (max-width: 1100px) {
       .main_services__r-side {
         width: calc(100% - 42% - 50px); } }
