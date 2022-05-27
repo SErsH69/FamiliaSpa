@@ -84,14 +84,16 @@ $(function () {
 
 
     function initAnimation() {
+        var headerTextHeight = $('.header__text').innerHeight();
+        console.log(headerTextHeight);
         $('.main_services__block').each(function() {
             gsap.to($(this).find('.main_services__l-side'), {
                 scrollTrigger: {
                     trigger: $(this),
                     start: 'top bottom-=400',
                     end: 'bottom bottom-=400',
-                    scrub: 1,
-                    markers: true,
+                    scrub: 2,
+                    // markers: true,
                 },
                 y: 0,
             })
@@ -100,13 +102,57 @@ $(function () {
                     trigger: $(this),
                     start: 'top bottom-=400',
                     end: 'bottom bottom-=400',
-                    scrub: 1,
-                    markers: true,
+                    scrub: 2,
+                    // markers: true,
                 },
                 y: 0,
             })
         });
-        
+        gsap.to('.header--animated .header', {
+            scrollTrigger: {
+                trigger: '.header--animated',
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 2,
+                // markers: true,
+                pin: true,
+                pinSpacer: false
+            },
+            y: 0,
+        });
+        gsap.to('.header--animated .header__h1', {
+            scrollTrigger: {
+                trigger: '.header--animated .header',
+                start: 'bottom bottom',
+                end: 'bottom top',
+                scrub: 2,
+                // markers: true
+            },
+            y: '-10vh',
+        })
+        gsap.to('.header--animated .header__text', {
+            scrollTrigger: {
+                trigger: '.header--animated .header',
+                start: 'bottom bottom',
+                end: 'bottom top',
+                scrub: 2,
+                // markers: true
+            },
+            y: '-15vh',
+            opacity: '0',
+        })
+        gsap.to('.header--animated .header__info', {
+            scrollTrigger: {
+                trigger: '.header--animated .header',
+                start: 'bottom bottom',
+                end: 'bottom top',
+                scrub: 2,
+                // markers: true
+            },
+            y: () => {
+                return ((window.innerHeight / 100 * 15) + headerTextHeight) * -1;
+            }
+        })
     }
     initAnimation();
 });

@@ -1,7 +1,9 @@
 body {
   box-sizing: border-box; }
 
-*, ::after, ::before {
+*,
+::after,
+::before {
   box-sizing: inherit;
   outline: none;
   scroll-behavior: smooth; }
@@ -19,7 +21,7 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
-  height: 100%; }
+  overflow: hidden; }
   .wrapper__in {
     padding-top: vw(138); }
 
@@ -199,14 +201,10 @@ textarea {
             margin-top: 60px; } }
 
 .header {
-  padding-top: 50px;
-  padding-bottom: 160px;
   position: relative;
-  min-height: 100vh; }
+  height: 100vh; }
   @media all and (max-width: 1023px) {
     .header {
-      padding-top: 40px;
-      padding-bottom: 80px;
       min-height: unset; } }
   .header__bottom {
     position: relative;
@@ -216,10 +214,15 @@ textarea {
         margin-top: 235px; } }
   .header__bg {
     position: absolute;
-    width: 100%;
     top: 0;
     left: 0;
-    right: 0; }
+    right: 0;
+    bottom: 0; }
+    .header__bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      max-width: unset; }
     .header__bg:before {
       content: '';
       position: absolute;
@@ -286,13 +289,17 @@ textarea {
       .header__log {
         max-width: 90px; } }
   .header__in {
-    min-height: calc(100vh - 210px);
+    min-height: 100%;
     display: flex;
     justify-content: space-between;
-    flex-direction: column; }
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 160px; }
     @media all and (max-width: 1023px) {
       .header__in {
-        min-height: unset; } }
+        min-height: unset;
+        padding-top: 40px;
+        padding-bottom: 80px; } }
   .header__h1 {
     margin: 0;
     font-family: 'Forum', cursive;
@@ -1814,13 +1821,16 @@ textarea {
     @media all and (max-width: 1023px) {
       .service .main_services__block:nth-child(even) {
         flex-direction: column; } }
-    .service .main_services__block:nth-child(even) .main_services__tit, .service .main_services__block:nth-child(even) .main_services__text {
+    .service .main_services__block:nth-child(even) .main_services__tit,
+    .service .main_services__block:nth-child(even) .main_services__text {
       margin-left: -185px; }
       @media all and (max-width: 1100px) {
-        .service .main_services__block:nth-child(even) .main_services__tit, .service .main_services__block:nth-child(even) .main_services__text {
+        .service .main_services__block:nth-child(even) .main_services__tit,
+        .service .main_services__block:nth-child(even) .main_services__text {
           margin-left: -135px; } }
       @media all and (max-width: 1023px) {
-        .service .main_services__block:nth-child(even) .main_services__tit, .service .main_services__block:nth-child(even) .main_services__text {
+        .service .main_services__block:nth-child(even) .main_services__tit,
+        .service .main_services__block:nth-child(even) .main_services__text {
           margin-left: 0; } }
     .service .main_services__block:nth-child(even) .main_services__r-side {
       width: auto;
@@ -2023,3 +2033,6 @@ textarea {
       @media all and (max-width: 1023px) {
         .main_serv__block.slick-current.slick-active.slick-center {
           transform: unset; } }
+
+.scroller {
+  height: 100vh; }

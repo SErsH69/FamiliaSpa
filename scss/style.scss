@@ -1,11 +1,15 @@
 body {
     box-sizing: border-box;
 }
-*,::after,::before {
+
+*,
+::after,
+::before {
     box-sizing: inherit;
     outline: none;
     scroll-behavior: smooth;
 }
+
 html,
 body {
     height: 100%;
@@ -13,23 +17,29 @@ body {
     padding: 0;
     background: #0B1015;
 }
+
 .owh {
     overflow: hidden;
 }
+
 .wrapper {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    overflow: hidden;
+    // height: 100%;
     &__in {
         padding-top: vw(138);
     }
 }
+
 .content {
     flex: 1 0 auto;
 }
+
 .footer {
     flex: 0 0 auto;
 }
+
 .center_block {
     max-width: 1320px;
     width: 100%;
@@ -38,13 +48,16 @@ body {
     padding-left: 20px;
     padding-right: 20px;
 }
+
 img {
     max-width: 100%;
     height: auto;
 }
+
 textarea {
     resize: none;
 }
+
 // scrollbar
 /* width */
 ::-webkit-scrollbar {
@@ -65,202 +78,241 @@ textarea {
 ::-webkit-scrollbar-thumb:hover {
     background: #fff;
 }
+
 // scrollbar end
 // burger
 .site-panel-wrap {
     z-index: 100;
     position: relative;
-    
+
     & .burger-wrap {
-      width: 95px;
-      height: 30px;
-      
-      & .burger-btn {
         width: 95px;
         height: 30px;
-        font-family: 'Mulish', sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 150%;
-        color: #FFFFFF; 
-        padding-left: 50px;
-        position: relative;
-        cursor: pointer;
-        &:before {
-            position: absolute;
-            content: '';
-            width: 30px;
+
+        & .burger-btn {
+            width: 95px;
             height: 30px;
-            top: 50%;
-            left: 0;
-            margin-top: -15px;
-            background: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect y='10.9092' width='22.7273' height='1.81818' rx='0.909091' fill='white'/%3E%3Crect x='7.27295' y='18.1821' width='22.7273' height='1.81818' rx='0.909091' fill='white'/%3E%3C/svg%3E%0A") 50% / 30px no-repeat;
-        }
-        &:hover {
-            text-decoration: underline;
-        }
-      }
-      
-      & .burger-close-btn {
-        width: 115px;
-        height: 30px;
-        font-family: 'Mulish', sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 150%;
-        color: #FFFFFF; 
-        padding-left: 50px;
-        position: relative;
-        cursor: pointer;
-        &:before {
-            position: absolute;
-            content: '';
-            width: 30px;
-            height: 30px;
-            top: 50%;
-            left: 0;
-            margin-top: -15px;
-            background: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.35282 25.6472C3.88239 25.1768 3.88239 24.4141 4.35282 23.9436L23.9436 4.35282C24.4141 3.88239 25.1768 3.88239 25.6472 4.35282C26.1176 4.82324 26.1176 5.58594 25.6472 6.05637L6.05637 25.6472C5.58594 26.1176 4.82324 26.1176 4.35282 25.6472Z' fill='white'/%3E%3Cpath d='M25.6472 25.6472C25.1768 26.1176 24.4141 26.1176 23.9436 25.6472L4.35282 6.05637C3.8824 5.58595 3.8824 4.82324 4.35282 4.35282C4.82324 3.8824 5.58594 3.8824 6.05637 4.35282L25.6472 23.9436C26.1176 24.4141 26.1176 25.1768 25.6472 25.6472Z' fill='white'/%3E%3C/svg%3E%0A") 50% / 30px no-repeat;
-        }
-        &:hover {
-            text-decoration: underline;
-        }
-      }
-      &.opened {
-        .burger-body {
-            right: 0;
-        }
-      }
-      & .burger-body {
-          transition: all .3s ease-out;
-          height: 100vh;
-          background: #0B1015;
-          overflow-y: auto;
-          padding-top: 50px;
-          padding-bottom: 150px;
-          position: fixed;
-          top: 0;
-          right: -100%;
-          width: 100%;
-          @media all and (max-width: 1023px) {
-              padding-top: 40px;
-              padding-bottom: 60px;
-          }
-          &__top {
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-          }
-          &__bottom {
-              margin-top: 90px;
-              display: flex;
-              justify-content: space-between;
-              @media all and (max-width: 1023px) {
-                  flex-direction: column;
-                  margin-top: 75px;
-              }
-          }
-          &__menu {
-              ul {
-                  padding: 0;
-                  margin: 0;
-                  list-style: none;
-                  li {
-                      a {
-                        display: inline-block;
-                        font-family: 'Forum', cursive;
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: 50px;
-                        color: #FFFFFF;
-                        text-decoration: none;
-                        margin-bottom: 30px;
-                        &:hover {
-                            text-decoration: underline;
-                        }
-                        @media all and (max-width: 1023px) {
-                            font-size: 30px;
-                        }
-                      }
-                      &:last-child {
-                          a {
-                              margin-bottom: 0;
-                          }
-                      }
-                  }
-              }
-          }
-          &__contacts {
-              display: flex;
-              flex-direction: column;
-              @media all and (max-width: 1023px) {
-                  margin-top: 80px;
-              }
-          }
-          &__tel, &__mail {
-            text-decoration: none;
             font-family: 'Mulish', sans-serif;
             font-style: normal;
             font-weight: 400;
-            font-size: 20px;
+            font-size: 16px;
+            line-height: 150%;
             color: #FFFFFF;
-            margin-bottom: 30px;
-            &:hover { 
+            padding-left: 50px;
+            position: relative;
+            cursor: pointer;
+
+            &:before {
+                position: absolute;
+                content: '';
+                width: 30px;
+                height: 30px;
+                top: 50%;
+                left: 0;
+                margin-top: -15px;
+                background: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect y='10.9092' width='22.7273' height='1.81818' rx='0.909091' fill='white'/%3E%3Crect x='7.27295' y='18.1821' width='22.7273' height='1.81818' rx='0.909091' fill='white'/%3E%3C/svg%3E%0A") 50% / 30px no-repeat;
+            }
+
+            &:hover {
                 text-decoration: underline;
             }
-            @media all and (max-width: 1023px) {
-                font-size: 16px;
-                margin-bottom: 20px;
-            }
-          }
-          &__address, &__work {
+        }
+
+        & .burger-close-btn {
+            width: 115px;
+            height: 30px;
             font-family: 'Mulish', sans-serif;
             font-style: normal;
             font-weight: 400;
-            font-size: 20px;
+            font-size: 16px;
+            line-height: 150%;
             color: #FFFFFF;
-            margin-bottom: 30px;
-            @media all and (max-width: 1023px) {
-                font-size: 16px;
-                margin-bottom: 20px;
+            padding-left: 50px;
+            position: relative;
+            cursor: pointer;
+
+            &:before {
+                position: absolute;
+                content: '';
+                width: 30px;
+                height: 30px;
+                top: 50%;
+                left: 0;
+                margin-top: -15px;
+                background: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.35282 25.6472C3.88239 25.1768 3.88239 24.4141 4.35282 23.9436L23.9436 4.35282C24.4141 3.88239 25.1768 3.88239 25.6472 4.35282C26.1176 4.82324 26.1176 5.58594 25.6472 6.05637L6.05637 25.6472C5.58594 26.1176 4.82324 26.1176 4.35282 25.6472Z' fill='white'/%3E%3Cpath d='M25.6472 25.6472C25.1768 26.1176 24.4141 26.1176 23.9436 25.6472L4.35282 6.05637C3.8824 5.58595 3.8824 4.82324 4.35282 4.35282C4.82324 3.8824 5.58594 3.8824 6.05637 4.35282L25.6472 23.9436C26.1176 24.4141 26.1176 25.1768 25.6472 25.6472Z' fill='white'/%3E%3C/svg%3E%0A") 50% / 30px no-repeat;
             }
-          }
-          &__socs {
-              margin-top: auto;
-              @media all and (max-width: 1023px) {
-                  margin-top: 60px;
-              }
-          }
-      }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &.opened {
+            .burger-body {
+                right: 0;
+            }
+        }
+
+        & .burger-body {
+            transition: all .3s ease-out;
+            height: 100vh;
+            background: #0B1015;
+            overflow-y: auto;
+            padding-top: 50px;
+            padding-bottom: 150px;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+
+            @media all and (max-width: 1023px) {
+                padding-top: 40px;
+                padding-bottom: 60px;
+            }
+
+            &__top {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            &__bottom {
+                margin-top: 90px;
+                display: flex;
+                justify-content: space-between;
+
+                @media all and (max-width: 1023px) {
+                    flex-direction: column;
+                    margin-top: 75px;
+                }
+            }
+
+            &__menu {
+                ul {
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+
+                    li {
+                        a {
+                            display: inline-block;
+                            font-family: 'Forum', cursive;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 50px;
+                            color: #FFFFFF;
+                            text-decoration: none;
+                            margin-bottom: 30px;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+
+                            @media all and (max-width: 1023px) {
+                                font-size: 30px;
+                            }
+                        }
+
+                        &:last-child {
+                            a {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__contacts {
+                display: flex;
+                flex-direction: column;
+
+                @media all and (max-width: 1023px) {
+                    margin-top: 80px;
+                }
+            }
+
+            &__tel,
+            &__mail {
+                text-decoration: none;
+                font-family: 'Mulish', sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                color: #FFFFFF;
+                margin-bottom: 30px;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                @media all and (max-width: 1023px) {
+                    font-size: 16px;
+                    margin-bottom: 20px;
+                }
+            }
+
+            &__address,
+            &__work {
+                font-family: 'Mulish', sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                color: #FFFFFF;
+                margin-bottom: 30px;
+
+                @media all and (max-width: 1023px) {
+                    font-size: 16px;
+                    margin-bottom: 20px;
+                }
+            }
+
+            &__socs {
+                margin-top: auto;
+
+                @media all and (max-width: 1023px) {
+                    margin-top: 60px;
+                }
+            }
+        }
     }
 }
+
 // burger end
 // header
 .header {
-    padding-top: 50px;
-    padding-bottom: 160px;
+
     position: relative;
-    min-height: 100vh;
+    height: 100vh;
+    // min-height: 100vh;
+
     @media all and (max-width: 1023px) {
-        padding-top: 40px;
-        padding-bottom: 80px;
+
         min-height: unset;
     }
+
     &__bottom {
         position: relative;
         z-index: 1;
+
         @media all and (max-width: 680px) {
             margin-top: 235px;
         }
     }
+
     &__bg {
         position: absolute;
-        width: 100%;
+        // width: 100%;
         top: 0;
         left: 0;
         right: 0;
+        bottom: 0;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            max-width: unset;
+        }
+
         &:before {
             content: '';
             position: absolute;
@@ -273,10 +325,12 @@ textarea {
             width: 100%;
             height: 100%;
         }
+
         @media all and (max-width: 480px) {
             display: none;
         }
     }
+
     &__mob {
         display: none;
         position: absolute;
@@ -286,6 +340,7 @@ textarea {
         top: 0;
         left: 0;
         right: 0;
+
         &:before {
             content: '';
             position: absolute;
@@ -298,13 +353,16 @@ textarea {
             width: 100%;
             height: 100%;
         }
+
         img {
             width: 100%;
         }
+
         @media all and (max-width: 480px) {
             display: block;
         }
     }
+
     &:before {
         content: '';
         position: absolute;
@@ -315,10 +373,12 @@ textarea {
         bottom: 50px;
         z-index: 1;
         animation: spin 1.5s infinite linear;
+
         @media all and (max-width: 1023px) {
             display: none;
         }
     }
+
     &__top {
         display: flex;
         align-items: center;
@@ -326,23 +386,32 @@ textarea {
         position: relative;
         z-index: 2;
     }
+
     &__log {
         display: block;
         max-width: 110px;
         width: 100%;
+
         @media all and (max-width: 1023px) {
             max-width: 90px;
         }
     }
+
     &__in {
-        min-height: calc(100vh - 210px);
+        min-height: 100%;
         display: flex;
         justify-content: space-between;
         flex-direction: column;
+        padding-top: 50px;
+        padding-bottom: 160px;
+
         @media all and (max-width: 1023px) {
             min-height: unset;
+            padding-top: 40px;
+            padding-bottom: 80px;
         }
     }
+
     &__h1 {
         margin: 0;
         font-family: 'Forum', cursive;
@@ -352,11 +421,13 @@ textarea {
         line-height: 120%;
         color: #FFFFFF;
         margin-bottom: 30px;
+
         @media all and (max-width: 1023px) {
             margin-bottom: 30px;
             font-size: 60px;
         }
     }
+
     &__text {
         font-family: 'Mulish', sans-serif;
         font-style: normal;
@@ -364,19 +435,23 @@ textarea {
         font-size: 20px;
         line-height: 150%;
         color: #FFFFFF;
+
         @media all and (max-width: 1023px) {
             font-size: 16px;
+
             br {
                 display: none;
             }
         }
     }
+
     &__info {
         margin-top: 40px;
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
+
     &__link {
         font-family: 'Mulish', sans-serif;
         font-style: normal;
@@ -392,23 +467,28 @@ textarea {
         text-decoration: none;
         padding: 21px 42px;
         transition: all .3s ease-out;
+
         &:hover {
             color: #0B1015;
             background: #fff;
         }
+
         @media all and (max-width: 1023px) {
             max-width: 330px;
             width: 100%;
         }
     }
+
     &__socs {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+
         @media all and (max-width: 1023px) {
             display: none;
         }
     }
+
     &__soc {
         display: flex;
         align-items: center;
@@ -420,20 +500,24 @@ textarea {
         line-height: 150%;
         color: #FFFFFF;
         margin-bottom: 20px;
+
         &:hover {
             text-decoration: underline;
         }
+
         img {
             flex: 0 0 30px;
             margin-right: 20px;
         }
     }
 }
+
 @keyframes spin {
     to {
-      transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
     }
 }
+
 // header end
 // main_services
 .main_services {
@@ -441,12 +525,14 @@ textarea {
     padding-left: 100px;
     padding-right: 100px;
     padding-bottom: 50px;
+
     @media all and (max-width: 1023px) {
         padding-top: 0;
         padding-left: 15px;
         padding-right: 15px;
         padding-bottom: 0;
     }
+
     &__title {
         font-family: 'Forum', cursive;
         font-style: normal;
@@ -455,11 +541,13 @@ textarea {
         line-height: 120%;
         color: #FFFFFF;
         margin-bottom: 50px;
+
         @media all and (max-width: 1023px) {
             margin-bottom: 40px;
             font-size: 60px;
         }
     }
+
     &__l-side {
         max-width: 42%;
         width: 100%;
@@ -469,6 +557,7 @@ textarea {
         z-index: 2;
         margin-right: 110px;
         transform: translateY(200px);
+
         &:before {
             content: '';
             position: absolute;
@@ -482,19 +571,23 @@ textarea {
             right: 20px;
             z-index: 1;
         }
+
         img {
             border-radius: 10px;
             position: relative;
             z-index: 2;
         }
+
         @media all and (max-width: 1100px) {
             margin-right: 50px;
         }
+
         @media all and (max-width: 1023px) {
             margin-bottom: 40px;
             max-width: calc(320px - 20px);
             margin-right: auto;
             margin-left: auto;
+
             &:before {
                 top: 10px;
                 left: 10px;
@@ -502,8 +595,10 @@ textarea {
                 bottom: -10px;
             }
         }
+
         @media all and (max-width: 420px) {
             height: 310px;
+
             img {
                 width: 100%;
                 height: 100%;
@@ -512,20 +607,24 @@ textarea {
             }
         }
     }
+
     &__r-side {
         width: calc(100% - 42% - 110px);
         position: relative;
         z-index: 3;
         transform: translateY(500px);
+
         @media all and (max-width: 1100px) {
             width: calc(100% - 42% - 50px);
         }
+
         @media all and (max-width: 1023px) {
             width: 100%;
             margin-left: auto;
             margin-right: auto;
         }
     }
+
     &__tit {
         font-family: 'Forum', cursive;
         font-style: normal;
@@ -534,24 +633,29 @@ textarea {
         line-height: 120%;
         margin-bottom: 50px;
         color: #FFFFFF;
+
         @media all and (max-width: 1100px) {
             font-size: 55px;
         }
+
         @media all and (max-width: 1023px) {
             font-size: 45px;
             margin-bottom: 30px;
         }
     }
+
     &__info {
         display: flex;
         align-items: center;
         margin-bottom: 40px;
+
         @media all and (max-width: 1023px) {
             flex-direction: column;
             align-items: flex-start;
             margin-bottom: 30px;
         }
     }
+
     &__time {
         font-family: 'Mulish', sans-serif;
         font-style: normal;
@@ -561,6 +665,7 @@ textarea {
         position: relative;
         padding-left: 60px;
         margin-right: 90px;
+
         &:before {
             position: absolute;
             content: '';
@@ -571,11 +676,13 @@ textarea {
             left: 0;
             background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='19' stroke='%23FD9F25' stroke-width='2'/%3E%3Cpath d='M19 2H21V4H19V2Z' fill='%23FD9F25'/%3E%3Cpath d='M19 36H21V38H19V36Z' fill='%23FD9F25'/%3E%3Cpath d='M32.0205 6.56494L33.4347 7.97915L32.0205 9.39337L30.6063 7.97915L32.0205 6.56494Z' fill='%23FD9F25'/%3E%3Cpath d='M7.97888 30.6066L9.39309 32.0208L7.97888 33.435L6.56466 32.0208L7.97888 30.6066Z' fill='%23FD9F25'/%3E%3Cpath d='M38 19L38 21L36 21L36 19L38 19Z' fill='%23FD9F25'/%3E%3Cpath d='M4 19L4 21L2 21L2 19L4 19Z' fill='%23FD9F25'/%3E%3Cpath d='M33.4346 32.0208L32.0204 33.435L30.6061 32.0208L32.0204 30.6065L33.4346 32.0208Z' fill='%23FD9F25'/%3E%3Cpath d='M9.39294 7.97912L7.97873 9.39333L6.56452 7.97912L7.97873 6.56491L9.39294 7.97912Z' fill='%23FD9F25'/%3E%3Ccircle cx='20' cy='20' r='2' fill='%23FD9F25'/%3E%3Cpath d='M20 8V20H32' stroke='%23FD9F25' stroke-width='2'/%3E%3C/svg%3E%0A") 50% no-repeat;
         }
+
         @media all and (max-width: 1023px) {
             font-size: 16px;
             padding-left: 40px;
             margin-right: 0;
             margin-bottom: 20px;
+
             &:before {
                 width: 30px;
                 height: 30px;
@@ -584,6 +691,7 @@ textarea {
             }
         }
     }
+
     &__price {
         font-family: 'Mulish', sans-serif;
         font-style: normal;
@@ -592,6 +700,7 @@ textarea {
         color: #FFFFFF;
         position: relative;
         padding-left: 60px;
+
         &:before {
             position: absolute;
             content: '';
@@ -602,10 +711,12 @@ textarea {
             left: 0;
             background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.3335 16.6667H36.6668' stroke='%23FD9F25' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M19.2473 34.1663H10.7307C4.81399 34.1663 3.31396 32.6996 3.31396 26.8496V13.1496C3.31396 7.84962 4.54735 6.14962 9.19735 5.88295C9.66401 5.86628 10.1807 5.84961 10.7307 5.84961H29.2473C35.164 5.84961 36.664 7.31628 36.664 13.1663V20.5163' stroke='%23FD9F25' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10 26.6667H16.6667' stroke='%23FD9F25' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M36.6668 29.9999C36.6668 31.2499 36.3168 32.4332 35.7001 33.4332C34.5501 35.3666 32.4335 36.6666 30.0002 36.6666C27.5668 36.6666 25.4502 35.3666 24.3002 33.4332C23.6835 32.4332 23.3335 31.2499 23.3335 29.9999C23.3335 26.3166 26.3168 23.3333 30.0002 23.3333C33.6835 23.3333 36.6668 26.3166 36.6668 29.9999Z' stroke='%23FD9F25' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M27.4023 29.9993L29.0523 31.6493L32.6023 28.366' stroke='%23FD9F25' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") 50% no-repeat;
         }
+
         @media all and (max-width: 1023px) {
             font-size: 16px;
             padding-left: 40px;
-            margin-right: 0;    
+            margin-right: 0;
+
             &:before {
                 width: 30px;
                 height: 30px;
@@ -614,6 +725,7 @@ textarea {
             }
         }
     }
+
     &__text {
         margin-bottom: 80px;
         max-width: 760px;
@@ -624,11 +736,13 @@ textarea {
         font-size: 20px;
         line-height: 150%;
         color: #FFFFFF;
+
         @media all and (max-width: 1023px) {
             font-size: 16px;
             margin-bottom: 50px;
         }
     }
+
     &__more {
         display: inline-block;
         position: relative;
@@ -639,6 +753,7 @@ textarea {
         color: #FFFFFF;
         text-decoration: none;
         padding-left: 90px;
+
         &:before {
             width: 70px;
             height: 70px;
@@ -650,60 +765,75 @@ textarea {
             border-radius: 50%;
             background: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox='0 0 70 70' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='68' height='68' rx='34' stroke='white' stroke-width='2'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M44.5512 28.2784L50.7163 34.3278C51.0946 34.6991 51.0946 35.3009 50.7163 35.6722L44.5512 41.7216C44.1729 42.0928 43.5595 42.0928 43.1812 41.7216C42.8028 41.3504 42.8028 40.7485 43.1812 40.3773L47.6925 35.9506H20.9688C20.4337 35.9506 20 35.525 20 35C20 34.475 20.4337 34.0494 20.9688 34.0494H47.6925L43.1812 29.6227C42.8028 29.2515 42.8028 28.6496 43.1812 28.2784C43.5595 27.9072 44.1729 27.9072 44.5512 28.2784Z' fill='white'/%3E%3C/svg%3E%0A") 50% / 70px no-repeat;
         }
+
         &:hover {
             text-decoration: underline;
         }
     }
+
     &__block {
         display: flex;
         align-items: center;
         margin-bottom: 70px;
+
         @media all and (max-width: 1023px) {
             flex-direction: column;
         }
+
         &:nth-child(odd) {
             max-width: 1517px;
             width: 100%;
+
             .main_services__tit {
                 margin-left: -185px;
+
                 @media all and (max-width: 1100px) {
                     margin-left: -135px;
                 }
+
                 @media all and (max-width: 1023px) {
                     margin-left: 0;
                 }
             }
         }
+
         &:nth-child(even) {
             flex-direction: row-reverse;
             max-width: 1158px;
             width: 100%;
             position: relative;
             margin-left: auto;
+
             @media all and (max-width: 1023px) {
                 flex-direction: column;
             }
+
             .main_services__l-side {
                 margin-right: 0;
                 max-width: 53%;
+
                 &:before {
                     left: 20px;
                     right: -20px;
+
                     @media all and (max-width: 1023px) {
                         right: -10px;
                         left: 10px;
                     }
                 }
+
                 @media all and (max-width: 1023px) {
                     max-width: 320px;
                     margin-left: auto;
                     margin-right: auto;
                 }
             }
+
             .main_services__r-side {
                 width: 758px;
                 position: absolute;
                 left: 0;
+
                 @media all and (max-width: 1023px) {
                     width: 100%;
                     position: relative;
@@ -712,19 +842,23 @@ textarea {
         }
     }
 }
+
 // main_services end
 // main_rev
 .main_rev {
     background: #FFFFFF;
+
     &__in {
         padding-top: 100px;
         padding-bottom: 240px;
         position: relative;
+
         @media all and (max-width: 1023px) {
             padding-top: 80px;
             padding-bottom: 80px;
         }
     }
+
     &__title {
         font-family: 'Forum', cursive;
         font-style: normal;
@@ -733,11 +867,13 @@ textarea {
         line-height: 120%;
         color: #0B1015;
         margin-bottom: 50px;
+
         @media all and (max-width: 1023px) {
             font-size: 60px;
             margin-bottom: 30px;
         }
     }
+
     &__blocks {
         max-width: 1080px;
         width: 100%;
@@ -745,8 +881,10 @@ textarea {
         margin-right: auto;
         position: relative;
     }
+
     &__block {
         position: relative;
+
         &:before {
             content: '';
             background: url("data:image/svg+xml,%3Csvg width='42' height='46' viewBox='0 0 42 46' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M23.6571 0L24.9429 0.503653C24.2571 2.63017 23.4571 4.78467 22.5429 6.96716C21.6857 9.09368 20.7143 11.1642 19.6286 13.1788C18.5429 15.1375 17.4286 16.9562 16.2857 18.635C15.1429 20.3139 13.9714 21.7409 12.7714 22.9161C13.9714 24.0912 15.1429 25.5182 16.2857 27.1971C17.4286 28.8759 18.5429 30.7506 19.6286 32.8212C20.7143 34.8358 21.6857 36.9343 22.5429 39.1168C23.4571 41.2433 24.2571 43.3978 24.9429 45.5803L23.6571 46C20.2857 41.5231 16.7143 37.41 12.9429 33.6606C9.17143 29.8552 4.85714 26.4976 0 23.5876V22.4964C4.85714 19.5304 9.17143 16.1728 12.9429 12.4234C16.7143 8.61801 20.2857 4.47689 23.6571 0ZM40.7143 2.0146L42 2.51825C41.2571 5.14842 40.2857 7.77859 39.0857 10.4088C37.9429 12.983 36.7143 15.3613 35.4 17.5438C34.1429 19.6703 32.8286 21.4611 31.4571 22.9161C32.8286 24.3151 34.1429 26.1338 35.4 28.3723C36.7143 30.5547 37.9429 32.9611 39.0857 35.5912C40.2857 38.2214 41.2571 40.8796 42 43.5657L40.7143 43.9854C37.6857 39.9002 34.4286 36.1509 30.9429 32.7372C27.5143 29.2676 23.6 26.2178 19.2 23.5876V22.4964C23.6 19.8662 27.5143 16.8163 30.9429 13.3467C34.4286 9.87713 37.6857 6.09976 40.7143 2.0146Z' fill='%23CECFD0'/%3E%3C/svg%3E%0A") 50% / 100% no-repeat;
@@ -755,12 +893,14 @@ textarea {
             top: 0;
             left: 16px;
             position: absolute;
+
             @media all and (max-width: 1023px) {
                 left: 0;
                 width: 29px;
                 height: 32px;
             }
         }
+
         &:after {
             content: '';
             background: url("data:image/svg+xml,%3Csvg width='42' height='46' viewBox='0 0 42 46' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.3429 0L17.0571 0.503653C17.7429 2.63017 18.5429 4.78467 19.4571 6.96716C20.3143 9.09368 21.2857 11.1642 22.3714 13.1788C23.4571 15.1375 24.5714 16.9562 25.7143 18.635C26.8571 20.3139 28.0286 21.7409 29.2286 22.9161C28.0286 24.0912 26.8571 25.5182 25.7143 27.1971C24.5714 28.8759 23.4571 30.7506 22.3714 32.8212C21.2857 34.8358 20.3143 36.9343 19.4571 39.1168C18.5429 41.2433 17.7429 43.3978 17.0571 45.5803L18.3429 46C21.7143 41.5231 25.2857 37.41 29.0571 33.6606C32.8286 29.8552 37.1429 26.4976 42 23.5876V22.4964C37.1429 19.5304 32.8286 16.1728 29.0571 12.4234C25.2857 8.61801 21.7143 4.47689 18.3429 0ZM1.28571 2.0146L0 2.51825C0.742859 5.14842 1.71429 7.77859 2.91429 10.4088C4.05714 12.983 5.28571 15.3613 6.6 17.5438C7.85714 19.6703 9.17143 21.4611 10.5429 22.9161C9.17143 24.3151 7.85714 26.1338 6.6 28.3723C5.28571 30.5547 4.05714 32.9611 2.91429 35.5912C1.71429 38.2214 0.742859 40.8796 0 43.5657L1.28571 43.9854C4.31429 39.9002 7.57143 36.1509 11.0571 32.7372C14.4857 29.2676 18.4 26.2178 22.8 23.5876V22.4964C18.4 19.8662 14.4857 16.8163 11.0571 13.3467C7.57143 9.87713 4.31429 6.09976 1.28571 2.0146Z' fill='%23CECFD0'/%3E%3C/svg%3E%0A") 50% / 100% no-repeat;
@@ -770,15 +910,18 @@ textarea {
             right: 0;
             margin-top: -47px;
             position: absolute;
+
             @media all and (max-width: 1023px) {
                 width: 29px;
                 height: 32px;
             }
         }
+
         @media all and (max-width: 1023px) {
             padding-top: 53px;
         }
     }
+
     &__text {
         font-family: 'Mulish', sans-serif;
         font-style: normal;
@@ -791,34 +934,40 @@ textarea {
         width: 100%;
         margin-left: auto;
         margin-right: auto;
+
         @media all and (max-width: 1023px) {
             font-size: 16px;
             max-width: 100%;
             padding-right: 30px;
         }
     }
+
     &__info {
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
         margin-left: auto;
         width: calc((100% + 830px) / 2);
+
         @media all and (max-width: 1023px) {
             width: 100%;
             flex-wrap: wrap;
         }
     }
+
     &__img {
         padding-left: 10px;
         padding-bottom: 10px;
         position: relative;
         border-radius: 10px;
         margin-right: 20px;
+
         img {
             border-radius: 10px;
             z-index: 2;
             position: relative;
         }
+
         &:before {
             left: 0;
             bottom: 0;
@@ -830,30 +979,36 @@ textarea {
             content: '';
             position: absolute;
         }
+
         @media all and (max-width: 1023px) {
             width: 147px;
             height: 195px;
             padding-left: 8px;
             padding-right: 8px;
+
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
                 object-position: center;
             }
+
             &:before {
                 width: calc(100% - 16px);
                 height: calc(100% - 16px);
             }
         }
     }
+
     &__texts {
         margin-right: auto;
+
         @media all and (max-width: 1023px) {
             width: calc(100% - 167px);
             margin-bottom: 8px;
         }
     }
+
     &__name {
         font-family: 'Forum', cursive;
         font-style: normal;
@@ -861,10 +1016,12 @@ textarea {
         font-size: 30px;
         color: #0B1015;
         margin-bottom: 14px;
+
         @media all and (max-width: 1023px) {
             font-size: 20px;
         }
     }
+
     &__more {
         display: inline-block;
         position: relative;
@@ -876,6 +1033,7 @@ textarea {
         text-decoration: none;
         padding-left: 90px;
         margin-bottom: 23px;
+
         &:before {
             width: 70px;
             height: 70px;
@@ -887,14 +1045,17 @@ textarea {
             border-radius: 50%;
             background: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox='0 0 70 70' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='68' height='68' rx='34' stroke='%230B1015' stroke-width='2'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M44.5512 28.2784L50.7163 34.3278C51.0946 34.6991 51.0946 35.3009 50.7163 35.6722L44.5512 41.7216C44.1729 42.0928 43.5595 42.0928 43.1812 41.7216C42.8028 41.3504 42.8028 40.7485 43.1812 40.3773L47.6925 35.9506H20.9688C20.4337 35.9506 20 35.525 20 35C20 34.475 20.4337 34.0494 20.9688 34.0494H47.6925L43.1812 29.6227C42.8028 29.2515 42.8028 28.6496 43.1812 28.2784C43.5595 27.9072 44.1729 27.9072 44.5512 28.2784Z' fill='%230B1015'/%3E%3C/svg%3E%0A") 50% / 70px no-repeat;
         }
+
         &:hover {
             text-decoration: underline;
         }
+
         @media all and (max-width: 1023px) {
             max-width: 100%;
             margin-top: 60px;
         }
     }
+
     .slick-prev {
         font-size: 0;
         background: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox='0 0 70 70' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='-1' y='1' width='68' height='68' rx='34' transform='matrix(-1 0 0 1 68 0)' stroke='%230B1015' stroke-width='2'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M25.4488 28.2784L19.2837 34.3278C18.9054 34.6991 18.9054 35.3009 19.2837 35.6722L25.4488 41.7216C25.8271 42.0928 26.4405 42.0928 26.8188 41.7216C27.1972 41.3504 27.1972 40.7485 26.8188 40.3773L22.3075 35.9506H49.0312C49.5663 35.9506 50 35.525 50 35C50 34.475 49.5663 34.0494 49.0312 34.0494H22.3075L26.8188 29.6227C27.1972 29.2515 27.1972 28.6496 26.8188 28.2784C26.4405 27.9072 25.8271 27.9072 25.4488 28.2784Z' fill='%230B1015'/%3E%3C/svg%3E%0A") 50% no-repeat;
@@ -905,9 +1066,11 @@ textarea {
         bottom: -130px;
         left: -92px;
         cursor: pointer;
+
         @media all and (max-width: 1280px) {
             left: 0;
         }
+
         @media all and (max-width: 1023px) {
             width: 40px;
             height: 40px;
@@ -918,6 +1081,7 @@ textarea {
             top: -5px;
         }
     }
+
     .slick-next {
         font-size: 0;
         background: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox='0 0 70 70' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='68' height='68' rx='34' stroke='%230B1015' stroke-width='2'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M44.5512 28.2784L50.7163 34.3278C51.0946 34.6991 51.0946 35.3009 50.7163 35.6722L44.5512 41.7216C44.1729 42.0928 43.5595 42.0928 43.1812 41.7216C42.8028 41.3504 42.8028 40.7485 43.1812 40.3773L47.6925 35.9506H20.9688C20.4337 35.9506 20 35.525 20 35C20 34.475 20.4337 34.0494 20.9688 34.0494H47.6925L43.1812 29.6227C42.8028 29.2515 42.8028 28.6496 43.1812 28.2784C43.5595 27.9072 44.1729 27.9072 44.5512 28.2784Z' fill='%230B1015'/%3E%3C/svg%3E%0A") 50% no-repeat;
@@ -928,9 +1092,11 @@ textarea {
         border: 0;
         cursor: pointer;
         bottom: -130px;
+
         @media all and (max-width: 1280px) {
             left: 90px;
         }
+
         @media all and (max-width: 1023px) {
             width: 40px;
             height: 40px;
@@ -941,6 +1107,7 @@ textarea {
             top: -5px;
         }
     }
+
     .count {
         bottom: 128px;
         left: 250px;
@@ -951,8 +1118,9 @@ textarea {
         line-height: 120%;
         position: absolute;
         color: #0B1015;
+
         @media all and (max-width: 1023px) {
-            top: 185px; 
+            top: 185px;
             right: 20px;
             left: unset;
             bottom: unset;
@@ -960,6 +1128,7 @@ textarea {
         }
     }
 }
+
 // main_rev end
 // main_text
 .main_text {
@@ -972,21 +1141,25 @@ textarea {
     max-width: 1583px;
     width: 100%;
     position: relative;
+
     @media all and (max-width: 1023px) {
         flex-direction: column;
         padding: 80px 15px;
     }
+
     &__l-side {
         width: 758px;
         position: absolute;
         left: 0;
         z-index: 3;
+
         @media all and (max-width: 1023px) {
             width: 100%;
             position: relative;
             margin-bottom: 50px;
         }
     }
+
     &__r-side {
         max-width: 68%;
         width: 100%;
@@ -997,6 +1170,7 @@ textarea {
         margin-left: auto;
         text-align: right;
         font-size: 0;
+
         &:before {
             content: '';
             position: absolute;
@@ -1010,13 +1184,16 @@ textarea {
             left: 25px;
             z-index: 1;
         }
+
         img {
             border-radius: 10px;
             position: relative;
             z-index: 2;
         }
+
         @media all and (max-width: 1023px) {
             max-width: 100%;
+
             &:before {
                 right: -7px;
                 bottom: -7px;
@@ -1025,6 +1202,7 @@ textarea {
             }
         }
     }
+
     &__title {
         font-family: 'Forum', cursive;
         font-style: normal;
@@ -1033,24 +1211,29 @@ textarea {
         line-height: 120%;
         color: #FFFFFF;
         margin-bottom: 50px;
+
         @media all and (max-width: 1600px) {
             position: relative;
             right: -100px;
         }
+
         @media all and (max-width: 1023px) {
             margin-bottom: 40px;
             right: unset;
             font-size: 60px;
         }
     }
+
     &__info {
         margin-left: auto;
         max-width: 540px;
         width: 100%;
+
         @media all and (max-width: 1023px) {
             max-width: 100%;
         }
     }
+
     &__text {
         font-family: 'Mulish', sans-serif;
         font-style: normal;
@@ -1061,12 +1244,14 @@ textarea {
         margin-bottom: 80px;
         max-width: 540px;
         width: 100%;
+
         @media all and (max-width: 1023px) {
             max-width: 100%;
             font-size: 16px;
             margin-bottom: 50px;
         }
     }
+
     &__more {
         display: inline-block;
         position: relative;
@@ -1077,6 +1262,7 @@ textarea {
         color: #FFFFFF;
         text-decoration: none;
         padding-left: 90px;
+
         &:before {
             width: 70px;
             height: 70px;
@@ -1088,18 +1274,22 @@ textarea {
             border-radius: 50%;
             background: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox='0 0 70 70' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='68' height='68' rx='34' stroke='white' stroke-width='2'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M44.5512 28.2784L50.7163 34.3278C51.0946 34.6991 51.0946 35.3009 50.7163 35.6722L44.5512 41.7216C44.1729 42.0928 43.5595 42.0928 43.1812 41.7216C42.8028 41.3504 42.8028 40.7485 43.1812 40.3773L47.6925 35.9506H20.9688C20.4337 35.9506 20 35.525 20 35C20 34.475 20.4337 34.0494 20.9688 34.0494H47.6925L43.1812 29.6227C42.8028 29.2515 42.8028 28.6496 43.1812 28.2784C43.5595 27.9072 44.1729 27.9072 44.5512 28.2784Z' fill='white'/%3E%3C/svg%3E%0A") 50% / 70px no-repeat;
         }
+
         &:hover {
             text-decoration: underline;
         }
     }
 }
+
 // main_text end
 // main__contacts
 .main__contacts {
     margin-top: 26px;
+
     @media all and (max-width: 1023px) {
         margin-top: 0;
     }
+
     &__title {
         margin-bottom: 60px;
         font-family: 'Forum', cursive;
@@ -1107,39 +1297,47 @@ textarea {
         font-weight: 400;
         font-size: 128px;
         color: #FFFFFF;
+
         @media all and (max-width: 1023px) {
             font-size: 60px;
             margin-bottom: 40px;
         }
     }
+
     &__blocks {
         display: flex;
         justify-content: space-between;
         margin-bottom: 50px;
         max-width: 1100px;
         width: 100%;
+
         @media all and (max-width: 1023px) {
             max-width: 100%;
             flex-direction: column;
         }
     }
-    &__l-side, &__r-side {
+
+    &__l-side,
+    &__r-side {
         width: 50%;
         display: flex;
         flex-direction: column;
         padding-left: 95px;
+
         @media all and (max-width: 1023px) {
             padding-left: 0;
             width: 100%;
         }
     }
-    &__l-side {
 
-    }
+    &__l-side {}
+
     &__r-side {
         align-items: flex-start;
     }
-    &__tel, &__mail {
+
+    &__tel,
+    &__mail {
         font-family: 'Mulish', sans-serif;
         font-style: normal;
         font-weight: 400;
@@ -1149,17 +1347,23 @@ textarea {
         margin-bottom: 30px;
         text-decoration: none;
         width: max-content;
+
         &:hover {
             text-decoration: underline;
         }
     }
-    &__mail, &__work {
+
+    &__mail,
+    &__work {
         margin-bottom: 0;
+
         @media all and (max-width: 1023px) {
             margin-bottom: 20px;
         }
     }
-    &__address, &__work {
+
+    &__address,
+    &__work {
         font-family: 'Mulish', sans-serif;
         font-style: normal;
         font-weight: 400;
@@ -1168,6 +1372,7 @@ textarea {
         display: inline-block;
         margin-bottom: 30px;
     }
+
     &__map {
         border-radius: 10px;
         overflow: hidden;
@@ -1176,18 +1381,22 @@ textarea {
         margin-right: 100px;
         position: relative;
         background-blend-mode: exclusion, hard-light;
+
         @media all and (max-width: 1023px) {
             margin-left: 15px;
             margin-right: 15px;
         }
+
         .mapBlock {
             mix-blend-mode: exclusion;
             position: relative;
             z-index: 1;
+
             @media all and (max-width: 1023px) {
                 height: 435px !important;
             }
         }
+
         // &:after {
         //     content: '';
         //     position: absolute;
@@ -1201,49 +1410,60 @@ textarea {
         // }
     }
 }
+
 // main__contacts end
 // footer
 .footer {
     margin-top: 100px;
     border-top: 1px solid #FFFFFF;
     padding-top: 100px;
+
     @media all and (max-width: 1023px) {
         padding-top: 80px;
         margin-top: 80px;
     }
+
     &__top {
         display: flex;
         align-items: flex-start;
-        justify-content: space-between; 
+        justify-content: space-between;
         padding-bottom: 50px;
         padding-right: 130px;
+
         @media all and (max-width: 1180px) {
             padding-right: 0;
         }
+
         @media all and (max-width: 1023px) {
             flex-direction: column;
         }
     }
+
     &__logo {
         display: block;
     }
-    &__nav {    
+
+    &__nav {
         margin-left: auto;
         margin-right: 120px;
+
         @media all and (max-width: 1023px) {
             margin-left: 0;
             margin-right: 0;
         }
+
         ul {
             list-style: none;
             margin: 0;
             padding: 0;
             columns: 2;
+
             @media all and (max-width: 1023px) {
                 columns: unset;
                 margin-top: 40px;
                 margin-bottom: 80px;
             }
+
             li {
                 a {
                     display: inline-block;
@@ -1255,6 +1475,7 @@ textarea {
                     font-size: 16px;
                     line-height: 150%;
                     color: #FFFFFF;
+
                     &:hover {
                         text-decoration: underline;
                     }
@@ -1262,11 +1483,13 @@ textarea {
             }
         }
     }
+
     &__contacts {
         display: flex;
         align-items: flex-start;
         flex-direction: column;
     }
+
     &__title {
         font-family: 'Forum', cursive;
         font-style: normal;
@@ -1276,7 +1499,9 @@ textarea {
         color: #FFFFFF;
         margin-bottom: 25px;
     }
-    &__tel, &__mail {
+
+    &__tel,
+    &__mail {
         font-family: 'Mulish', sans-serif;
         font-style: normal;
         font-weight: 400;
@@ -1286,11 +1511,14 @@ textarea {
         margin-bottom: 20px;
         text-decoration: none;
         display: inline-block;
+
         &:hover {
             text-decoration: underline;
         }
     }
-    &__address, &__work {
+
+    &__address,
+    &__work {
         font-family: 'Mulish', sans-serif;
         font-style: normal;
         font-weight: 400;
@@ -1299,15 +1527,18 @@ textarea {
         color: #FFFFFF;
         margin-bottom: 20px;
     }
+
     &__work {
         margin-bottom: 0;
     }
+
     &__bottom {
         border-top: 1px solid #CECFD0;
         padding: 50px 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
+
         @media all and (max-width: 1023px) {
             flex-direction: column;
             padding-top: 40px;
@@ -1315,6 +1546,7 @@ textarea {
             align-items: flex-start;
         }
     }
+
     &__copy {
         font-family: 'Mulish', sans-serif;
         font-style: normal;
@@ -1325,12 +1557,14 @@ textarea {
         max-width: 320px;
         width: 100%;
         margin-right: 10px;
+
         @media all and (max-width: 1023px) {
             max-width: 100%;
             margin-right: 0;
             margin-bottom: 20px;
         }
     }
+
     &__link {
         margin-right: auto;
         font-family: 'Mulish', sans-serif;
@@ -1340,48 +1574,59 @@ textarea {
         line-height: 150%;
         color: #FFFFFF;
         text-decoration: none;
+
         &:hover {
             text-decoration: underline;
         }
+
         @media all and (max-width: 1023px) {
             margin-bottom: 20px;
             margin-right: 0;
         }
     }
+
     &__socs {
         display: flex;
         align-items: center;
         justify-content: flex-end;
+
         @media all and (max-width: 1023px) {
             flex-wrap: wrap;
             justify-content: flex-start;
         }
     }
+
     &__soc {
         display: flex;
         align-items: center;
         text-decoration: none;
         margin-left: 50px;
+
         @media all and (max-width: 1023px) {
             margin-left: 0;
             margin-right: 50px;
             margin-bottom: 20px;
         }
+
         img {
             flex: 0 0 30px;
             margin-right: 20px;
         }
-        font-family: 'Mulish', sans-serif;
+
+        font-family: 'Mulish',
+        sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
         line-height: 150%;
         color: #FFFFFF;
+
         &:hover {
             text-decoration: underline;
         }
     }
 }
+
 // footer end
 // breadcrums
 .breadcrums {
@@ -1396,23 +1641,28 @@ textarea {
     margin-bottom: auto;
     position: relative;
     z-index: 1;
+
     @media all and (max-width: 1023px) {
         margin-top: 175px;
         margin-bottom: 60px;
     }
+
     a {
         color: #fff;
         text-decoration: none;
+
         &:hover {
             text-decoration: underline;
         }
     }
+
     &__splash {
         display: inline-block;
         margin-left: 20px;
         margin-right: 20px;
     }
 }
+
 // breadcrums end
 // contacts
 .contacts {
@@ -1420,21 +1670,26 @@ textarea {
         &:before {
             display: none;
         }
+
         &__bottom {
             @media all and (max-width: 1023px) {
                 margin-top: 0;
             }
         }
+
         @media all and (max-width: 1023px) {
             padding-bottom: 0;
         }
     }
+
     .main__contacts {
         margin-top: -190px;
         position: relative;
+
         @media all and (max-width: 1023px) {
             margin-top: 0;
         }
+
         &__blocks {
             @media all and (max-width: 1023px) {
                 margin-bottom: 0;
@@ -1442,30 +1697,36 @@ textarea {
         }
     }
 }
+
 // contacts end
 // about
 .about {
     .slick-slide {
-        margin-left:  10px;
-        margin-right:  10px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
+
     .slick-list {
         margin-left: -10px;
         margin-right: -10px;
     }
+
     .header {
         @media all and (max-width: 1023px) {
             padding-bottom: 15px;
         }
+
         &:before {
             display: none;
         }
+
         &__bottom {
             @media all and (max-width: 1023px) {
                 margin-top: 0;
             }
         }
     }
+
     .slick-prev {
         width: 70px;
         height: 70px;
@@ -1477,6 +1738,7 @@ textarea {
         border: 0;
         font-size: 0;
         cursor: pointer;
+
         @media all and (max-width: 1023px) {
             right: 75px;
             width: 40px;
@@ -1484,6 +1746,7 @@ textarea {
             background-size: 100%;
         }
     }
+
     .slick-next {
         width: 70px;
         height: 70px;
@@ -1495,6 +1758,7 @@ textarea {
         border: 0;
         cursor: pointer;
         font-size: 0;
+
         @media all and (max-width: 1023px) {
             right: 15px;
             width: 40px;
@@ -1502,12 +1766,15 @@ textarea {
             height: 40px;
         }
     }
+
     .slick-list {
         position: unset;
     }
+
     .about_slider {
         .slick-list {
             position: relative;
+
             &:before {
                 content: '';
                 position: absolute;
@@ -1518,27 +1785,33 @@ textarea {
                 right: 0px;
                 border: 2px solid #FFFFFF;
                 border-radius: 10px;
+
                 @media all and (max-width: 1340px) {
                     display: none;
                 }
             }
         }
+
         @media all and (max-width: 1023px) {
             overflow: hidden;
         }
+
         &__in {
             padding-bottom: 120px;
+
             @media all and (max-width: 1023px) {
                 width: calc(100% + 15px);
                 padding-bottom: 70px;
             }
         }
+
         &__img {
             @media all and (max-width: 1023px) {
                 max-width: 243px;
                 height: 340px;
                 border-radius: 10px;
                 overflow: hidden;
+
                 img {
                     height: 100%;
                     width: 100%;
@@ -1548,6 +1821,7 @@ textarea {
         }
     }
 }
+
 // about end
 // sales
 .sales {
@@ -1557,51 +1831,65 @@ textarea {
                 margin-top: 0;
             }
         }
+
         &__h1 {
             @media all and (max-width: 359px) {
                 font-size: 45px;
             }
         }
+
         @media all and (max-width: 1023px) {
             padding-bottom: 0;
         }
     }
+
     .sales_block {
         padding-left: 100px;
         padding-right: 100px;
+
         @media all and (max-width: 1250px) {
             padding-left: 50px;
             padding-right: 50px;
         }
+
         @media all and (max-width: 1023px) {
             padding-left: 15px;
             padding-right: 15px;
         }
+
         &__blocks {
             padding-top: 100px;
+
             @media all and (max-width: 1023px) {
                 padding-top: 80px;
             }
         }
+
         &__block {
             display: flex;
             align-items: center;
+
             &:not(:last-child) {
                 margin-bottom: 70px;
+
                 @media all and (max-width: 1023px) {
                     margin-bottom: 65px;
                 }
             }
+
             &:last-child {
                 margin-bottom: 20px;
+
                 @media all and (max-width: 1023px) {
                     margin-bottom: 0;
                 }
             }
+
             @media all and (max-width: 1023px) {
                 flex-direction: column;
             }
         }
+
         &__l-side {
             max-width: 37%;
             width: 100%;
@@ -1610,6 +1898,7 @@ textarea {
             position: relative;
             z-index: 2;
             margin-right: 110px;
+
             &:before {
                 content: '';
                 position: absolute;
@@ -1623,20 +1912,24 @@ textarea {
                 right: 20px;
                 z-index: 1;
             }
+
             img {
                 border-radius: 10px;
                 position: relative;
                 width: 100%;
                 z-index: 2;
             }
+
             @media all and (max-width: 1500px) {
                 margin-right: 50px;
             }
+
             @media all and (max-width: 1023px) {
                 margin-bottom: 40px;
                 max-width: calc(320px - 20px);
                 margin-right: auto;
                 margin-left: auto;
+
                 &:before {
                     top: 10px;
                     left: 10px;
@@ -1644,8 +1937,10 @@ textarea {
                     bottom: -10px;
                 }
             }
+
             @media all and (max-width: 420px) {
                 height: 310px;
+
                 img {
                     width: 100%;
                     height: 100%;
@@ -1654,19 +1949,23 @@ textarea {
                 }
             }
         }
+
         &__r-side {
             width: calc(100% - 37% - 110px);
             position: relative;
             z-index: 3;
+
             @media all and (max-width: 1500px) {
                 width: calc(100% - 37% - 50px);
             }
+
             @media all and (max-width: 1023px) {
                 width: 100%;
                 margin-left: auto;
                 margin-right: auto;
             }
         }
+
         &__tit {
             font-family: 'Forum', cursive;
             font-style: normal;
@@ -1676,16 +1975,19 @@ textarea {
             margin-bottom: 50px;
             color: #FFFFFF;
             margin-left: -185px;
+
             @media all and (max-width: 1500px) {
                 font-size: 55px;
                 margin-left: -135px;
             }
+
             @media all and (max-width: 1023px) {
                 font-size: 45px;
                 margin-bottom: 30px;
                 margin-left: 0;
             }
         }
+
         &__date {
             font-family: 'Mulish', sans-serif;
             font-style: normal;
@@ -1700,6 +2002,7 @@ textarea {
             display: inline-block;
             margin-bottom: 30px;
         }
+
         &__text {
             max-width: 760px;
             width: 100%;
@@ -1709,12 +2012,14 @@ textarea {
             font-size: 20px;
             line-height: 150%;
             color: #FFFFFF;
+
             @media all and (max-width: 1023px) {
                 font-size: 16px;
             }
         }
     }
 }
+
 // sales end
 // masters
 .masters {
@@ -1724,46 +2029,58 @@ textarea {
                 margin-top: 0;
             }
         }
+
         &__h1 {
             @media all and (max-width: 359px) {
                 font-size: 45px;
             }
         }
+
         @media all and (max-width: 1023px) {
             padding-bottom: 0;
         }
     }
+
     .sales_block {
         padding-top: 100px;
         padding-left: 100px;
         padding-right: 100px;
+
         @media all and (max-width: 1250px) {
             padding-left: 50px;
             padding-right: 50px;
         }
+
         @media all and (max-width: 1023px) {
             padding-left: 15px;
             padding-right: 15px;
         }
+
         &__block {
             display: flex;
             align-items: center;
+
             &:not(:last-child) {
                 margin-bottom: 70px;
+
                 @media all and (max-width: 1023px) {
                     margin-bottom: 65px;
                 }
             }
+
             &:last-child {
                 margin-bottom: 20px;
+
                 @media all and (max-width: 1023px) {
                     margin-bottom: 0;
                 }
             }
+
             @media all and (max-width: 1023px) {
                 flex-direction: column;
             }
         }
+
         &__l-side {
             max-width: 37%;
             width: 100%;
@@ -1772,6 +2089,7 @@ textarea {
             position: relative;
             z-index: 2;
             margin-right: 110px;
+
             &:before {
                 content: '';
                 position: absolute;
@@ -1785,20 +2103,24 @@ textarea {
                 right: 20px;
                 z-index: 1;
             }
+
             img {
                 border-radius: 10px;
                 position: relative;
                 width: 100%;
                 z-index: 2;
             }
+
             @media all and (max-width: 1500px) {
                 margin-right: 50px;
             }
+
             @media all and (max-width: 1023px) {
                 margin-bottom: 40px;
                 max-width: calc(320px - 20px);
                 margin-right: auto;
                 margin-left: auto;
+
                 &:before {
                     top: 10px;
                     left: 10px;
@@ -1806,8 +2128,10 @@ textarea {
                     bottom: -10px;
                 }
             }
+
             @media all and (max-width: 420px) {
                 height: 310px;
+
                 img {
                     width: 100%;
                     height: 100%;
@@ -1816,19 +2140,23 @@ textarea {
                 }
             }
         }
+
         &__r-side {
             width: calc(100% - 37% - 110px);
             position: relative;
             z-index: 3;
+
             @media all and (max-width: 1500px) {
                 width: calc(100% - 37% - 50px);
             }
+
             @media all and (max-width: 1023px) {
                 width: 100%;
                 margin-left: auto;
                 margin-right: auto;
             }
         }
+
         &__tit {
             font-family: 'Forum', cursive;
             font-style: normal;
@@ -1838,16 +2166,19 @@ textarea {
             margin-bottom: 50px;
             color: #FFFFFF;
             margin-left: -185px;
+
             @media all and (max-width: 1500px) {
                 font-size: 55px;
                 margin-left: -135px;
             }
+
             @media all and (max-width: 1023px) {
                 font-size: 45px;
                 margin-bottom: 30px;
                 margin-left: 0;
             }
         }
+
         &__name {
             font-family: 'Forum', cursive;
             font-style: normal;
@@ -1855,10 +2186,12 @@ textarea {
             font-size: 50px;
             color: #FFFFFF;
             margin-bottom: 30px;
+
             @media all and (max-width: 1023px) {
                 font-size: 30px;
             }
         }
+
         &__text {
             max-width: 760px;
             width: 100%;
@@ -1868,24 +2201,30 @@ textarea {
             font-size: 20px;
             line-height: 150%;
             color: #FFFFFF;
+
             @media all and (max-width: 1023px) {
                 font-size: 16px;
             }
         }
     }
+
     .master_blocks {
         margin-top: 100px;
+
         @media all and (max-width: 1023px) {
             margin-top: 65px;
         }
+
         &__block {
             &:not(:last-child) {
                 margin-bottom: 100px;
             }
+
             @media all and (max-width: 1023px) {
                 padding-bottom: 70px;
             }
         }
+
         &__title {
             margin-bottom: 50px;
             font-family: 'Forum', cursive;
@@ -1893,41 +2232,50 @@ textarea {
             font-weight: 400;
             font-size: 90px;
             color: #FFFFFF;
+
             @media all and (max-width: 1023px) {
                 margin-bottom: 40px;
                 font-size: 45px;
             }
         }
+
         .slick-slide {
-            margin-left:  10px;
-            margin-right:  10px;
+            margin-left: 10px;
+            margin-right: 10px;
         }
+
         .slick-list {
             margin-left: -10px;
             margin-right: -10px;
         }
+
         .slick-track {
             margin-left: 0;
         }
+
         &__slide {
             @media all and (max-width: 1023px) {
                 width: 242px;
             }
         }
+
         &__img {
             border-radius: 10px;
             overflow: hidden;
             height: 328px;
             margin-bottom: 30px;
+
             @media all and (max-width: 1023px) {
                 height: 260px;
             }
+
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
             }
         }
+
         &__name {
             font-family: 'Forum', cursive;
             font-style: normal;
@@ -1936,6 +2284,7 @@ textarea {
             color: #FFFFFF;
             margin-bottom: 20px;
         }
+
         &__work {
             font-family: 'Mulish', sans-serif;
             font-style: normal;
@@ -1944,6 +2293,7 @@ textarea {
             color: #FFFFFF;
         }
     }
+
     .slick-prev {
         width: 70px;
         height: 70px;
@@ -1955,6 +2305,7 @@ textarea {
         border: 0;
         font-size: 0;
         cursor: pointer;
+
         @media all and (max-width: 1023px) {
             right: 75px;
             bottom: -70px;
@@ -1963,6 +2314,7 @@ textarea {
             background-size: 100%;
         }
     }
+
     .slick-next {
         width: 70px;
         height: 70px;
@@ -1974,6 +2326,7 @@ textarea {
         border: 0;
         cursor: pointer;
         font-size: 0;
+
         @media all and (max-width: 1023px) {
             right: 15px;
             bottom: -70px;
@@ -1983,6 +2336,7 @@ textarea {
         }
     }
 }
+
 // masters end
 // service
 .service {
@@ -1993,31 +2347,39 @@ textarea {
             }
         }
     }
+
     .main_services {
         &__text {
             margin-bottom: 50px;
+
             @media all and (max-width: 1023px) {
                 margin-bottom: 30px;
             }
         }
+
         &__list {
             margin: 0;
             padding: 0;
             list-style: none;
             margin-bottom: 60px;
+
             @media all and (max-width: 1023px) {
                 margin-bottom: 30px;
             }
+
             li {
                 display: flex;
+
                 &:not(:last-child) {
                     margin-bottom: 20px;
                 }
+
                 @media all and (max-width: 1023px) {
                     flex-direction: column;
                 }
             }
         }
+
         &__times {
             font-family: 'Mulish', sans-serif;
             font-style: normal;
@@ -2026,21 +2388,26 @@ textarea {
             color: #FD9F25;
             max-width: 115px;
             width: 100%;
+
             @media all and (max-width: 1023px) {
                 max-width: 100%;
                 margin-bottom: 10px;
             }
         }
-        &__time, &__price {
+
+        &__time,
+        &__price {
             @media all and (max-width: 1023px) {
                 font-size: 14px;
             }
         }
+
         &__tit {
             @media all and (max-width: 1023px) {
                 font-size: 30px;
             }
         }
+
         &__txt {
             font-family: 'Mulish', sans-serif;
             font-style: normal;
@@ -2049,60 +2416,77 @@ textarea {
             line-height: 150%;
             color: #FFFFFF;
         }
+
         &__info {
             margin-bottom: 60px;
+
             @media all and (max-width: 1023px) {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
                 margin-bottom: 30px;
-                > * {
+
+                >* {
                     width: 50%;
                 }
             }
         }
+
         &__block {
             display: flex;
             align-items: center;
             margin-bottom: 70px;
+
             @media all and (max-width: 1023px) {
                 flex-direction: column;
             }
+
             &:nth-child(even) {
                 margin-left: unset;
                 flex-direction: unset;
                 max-width: 1517px;
                 width: 100%;
+
                 @media all and (max-width: 1023px) {
                     flex-direction: column;
                 }
-                .main_services__tit, .main_services__text {
+
+                .main_services__tit,
+                .main_services__text {
                     margin-left: -185px;
+
                     @media all and (max-width: 1100px) {
                         margin-left: -135px;
                     }
+
                     @media all and (max-width: 1023px) {
                         margin-left: 0;
                     }
                 }
+
                 .main_services__r-side {
                     width: auto;
                     position: unset;
+
                     @media all and (max-width: 1023px) {
                         width: 100%;
                     }
                 }
+
                 .main_services__l-side {
                     max-width: 42%;
                     margin-right: 110px;
+
                     &:before {
                         left: -20px;
                         right: 20px;
+
                         @media all and (max-width: 1023px) {
                             right: -10px;
                             left: 10px;
                         }
                     }
+
                     @media all and (max-width: 1023px) {
                         max-width: 320px;
                         margin-left: auto;
@@ -2110,39 +2494,48 @@ textarea {
                     }
                 }
             }
+
             &:nth-child(odd) {
                 flex-direction: row-reverse;
                 max-width: 1158px;
                 width: 100%;
                 position: relative;
                 margin-left: auto;
+
                 .main_services__tit {
                     margin-left: 0;
                 }
+
                 @media all and (max-width: 1023px) {
                     flex-direction: column;
                 }
+
                 .main_services__l-side {
                     margin-right: 0;
                     max-width: 53%;
+
                     &:before {
                         left: 20px;
                         right: -20px;
+
                         @media all and (max-width: 1023px) {
                             right: -10px;
                             left: 10px;
                         }
                     }
+
                     @media all and (max-width: 1023px) {
                         max-width: 320px;
                         margin-left: auto;
                         margin-right: auto;
                     }
                 }
+
                 .main_services__r-side {
                     width: 890px;
                     position: absolute;
                     left: 0;
+
                     @media all and (max-width: 1023px) {
                         width: 100%;
                         position: relative;
@@ -2152,6 +2545,7 @@ textarea {
         }
     }
 }
+
 // service end
 // main_serv
 .main_serv {
@@ -2162,6 +2556,7 @@ textarea {
     max-width: 1583px;
     width: 100%;
     padding-top: 100px;
+
     @media all and (max-width: 1023px) {
         padding-top: 80px;
         padding-left: 15px;
@@ -2170,18 +2565,22 @@ textarea {
         padding-bottom: 70px;
         position: relative;
     }
+
     &__l-side {
         flex: 0 0 630px;
         margin-right: 128px;
+
         @media all and (max-width: 1100px) {
             margin-right: 50px;
         }
+
         @media all and (max-width: 1023px) {
             flex: none;
             margin-right: 0;
             margin-bottom: 30px;
         }
     }
+
     &__title {
         font-family: 'Forum', cursive;
         font-style: normal;
@@ -2189,15 +2588,18 @@ textarea {
         font-size: 128px;
         color: #FFFFFF;
         margin-bottom: 50px;
+
         @media all and (max-width: 1630px) {
             padding-left: 100px;
         }
+
         @media all and (max-width: 1023px) {
             padding-left: 0;
             margin-bottom: 40px;
             font-size: 60px;
         }
     }
+
     &__text {
         font-family: 'Mulish', sans-serif;
         font-style: normal;
@@ -2205,20 +2607,24 @@ textarea {
         font-size: 20px;
         line-height: 150%;
         color: #FFFFFF;
+
         @media all and (max-width: 1023px) {
             font-size: 16px;
         }
     }
+
     &__navs {
         max-width: 415px;
         margin-left: auto;
         padding-bottom: 130px;
+
         @media all and (max-width: 1023px) {
             padding-bottom: 0;
             max-width: 100%;
             position: unset;
         }
     }
+
     .slick-prev {
         bottom: 0;
         left: 0;
@@ -2229,6 +2635,7 @@ textarea {
         border-radius: 50%;
         position: absolute;
         background: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox='0 0 70 70' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='-1' y='1' width='68' height='68' rx='34' transform='matrix(-1 0 0 1 68 0)' stroke='white' stroke-width='2'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M25.4488 28.2784L19.2837 34.3278C18.9054 34.6991 18.9054 35.3009 19.2837 35.6722L25.4488 41.7216C25.8271 42.0928 26.4405 42.0928 26.8188 41.7216C27.1972 41.3504 27.1972 40.7485 26.8188 40.3773L22.3075 35.9506H49.0312C49.5663 35.9506 50 35.525 50 35C50 34.475 49.5663 34.0494 49.0312 34.0494H22.3075L26.8188 29.6227C27.1972 29.2515 27.1972 28.6496 26.8188 28.2784C26.4405 27.9072 25.8271 27.9072 25.4488 28.2784Z' fill='white'/%3E%3C/svg%3E%0A") 50% / 100% no-repeat;
+
         @media all and (max-width: 1023px) {
             left: unset;
             right: 60px;
@@ -2236,6 +2643,7 @@ textarea {
             height: 40px;
         }
     }
+
     .slick-next {
         bottom: 0;
         left: 90px;
@@ -2246,6 +2654,7 @@ textarea {
         border-radius: 50%;
         position: absolute;
         background: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox='0 0 70 70' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='68' height='68' rx='34' stroke='white' stroke-width='2'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M44.5512 28.2784L50.7163 34.3278C51.0946 34.6991 51.0946 35.3009 50.7163 35.6722L44.5512 41.7216C44.1729 42.0928 43.5595 42.0928 43.1812 41.7216C42.8028 41.3504 42.8028 40.7485 43.1812 40.3773L47.6925 35.9506H20.9688C20.4337 35.9506 20 35.525 20 35C20 34.475 20.4337 34.0494 20.9688 34.0494H47.6925L43.1812 29.6227C42.8028 29.2515 42.8028 28.6496 43.1812 28.2784C43.5595 27.9072 44.1729 27.9072 44.5512 28.2784Z' fill='white'/%3E%3C/svg%3E%0A") 50% / 100% no-repeat;
+
         @media all and (max-width: 1023px) {
             left: unset;
             right: 15px;
@@ -2253,37 +2662,46 @@ textarea {
             height: 40px;
         }
     }
+
     &__r-side {
         width: calc(100% - 758px);
+
         .slick-slide {
-            margin-left:  10px;
-            margin-right:  10px;
+            margin-left: 10px;
+            margin-right: 10px;
         }
+
         .slick-list {
             margin-left: -10px;
             margin-right: -10px;
         }
+
         @media all and (max-width: 1100px) {
             width: calc(100% - 680px);
         }
+
         @media all and (max-width: 1023px) {
             width: calc(100% + 15px);
         }
     }
+
     &__img {
         border-radius: 10px;
         overflow: hidden;
         height: 328px;
         margin-bottom: 30px;
+
         @media all and (max-width: 1023px) {
             height: 260px;
         }
+
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
     }
+
     &__name {
         font-family: 'Forum', cursive;
         font-style: normal;
@@ -2292,6 +2710,7 @@ textarea {
         color: #FFFFFF;
         margin-bottom: 20px;
     }
+
     &__work {
         font-family: 'Mulish', sans-serif;
         font-style: normal;
@@ -2299,23 +2718,35 @@ textarea {
         font-size: 16px;
         color: #FFFFFF;
     }
+
     &__slider {
         .slick-track {
             padding: 60px 0;
+
             @media all and (max-width: 1023px) {
                 padding: 0;
             }
         }
     }
+
     &__block {
         position: relative;
         transition: all .3s ease-out;
+
         &.slick-current.slick-active.slick-center {
             transform: translateY(-60px);
+
             @media all and (max-width: 1023px) {
                 transform: unset;
             }
         }
     }
 }
+
 // main_serv end
+
+
+
+.scroller {
+    height: 100vh;
+}
