@@ -62,6 +62,27 @@ $(function(){
         },
       ]
   });
+    $('.slider-for').slick({
+        centerMode: true,
+        slidesToShow: 3,
+        arrows: false,
+        variableWidth: true,
+        asNavFor: '.slider-nav',
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+                centerMode: false
+            }
+          },
+        ]
+    });
+    $('.slider-nav').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for',
+        dots: false
+    });
   
   (function() {
     
