@@ -71,7 +71,8 @@ $(function () {
         responsive: [{
             breakpoint: 1024,
             settings: {
-                centerMode: false
+                centerMode: false,
+                variableWidth: true
             }
         }, ]
     });
@@ -141,6 +142,17 @@ $(function () {
             y: '-15vh',
             opacity: '0',
         })
+        gsap.to('.header--animated .main__contacts__blocks', {
+            scrollTrigger: {
+                trigger: '.header--animated .header',
+                start: 'bottom bottom',
+                end: 'bottom top',
+                scrub: 2,
+                // markers: true
+            },
+            y: '-15vh',
+            opacity: '0',
+        })
         gsap.to('.header--animated .header__info', {
             scrollTrigger: {
                 trigger: '.header--animated .header',
@@ -161,7 +173,7 @@ $(function () {
                 scrub: 2,
                 // markers: true
             },
-            y: '5vh'
+            opacity: '0'
         })
     }
     if (window.innerWidth > 1023) {

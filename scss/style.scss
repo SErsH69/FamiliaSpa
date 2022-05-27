@@ -280,13 +280,16 @@ textarea {
 // burger end
 // header
 .header {
-
     position: relative;
-    height: 100vh;
-    // min-height: 100vh;
+    z-index: 3;
+    @media all and (min-width: 1024px) {
+        height: 100vh;
+    }
 
     @media all and (max-width: 1023px) {
-
+        &--animated {
+            position: relative;
+        }
         min-height: unset;
     }
 
@@ -527,7 +530,7 @@ textarea {
     padding-bottom: 50px;
 
     @media all and (max-width: 1023px) {
-        padding-top: 0;
+        padding-top: 80px;
         padding-left: 15px;
         padding-right: 15px;
         padding-bottom: 0;
@@ -556,7 +559,9 @@ textarea {
         position: relative;
         z-index: 2;
         margin-right: 110px;
-        transform: translateY(200px);
+        @media all and (min-width: 1024px) {
+            transform: translateY(200px);
+        }
 
         &:before {
             content: '';
@@ -612,7 +617,9 @@ textarea {
         width: calc(100% - 42% - 110px);
         position: relative;
         z-index: 3;
-        transform: translateY(500px);
+        @media all and (min-width: 1024px) {
+            transform: translateY(500px);
+        }
 
         @media all and (max-width: 1100px) {
             width: calc(100% - 42% - 50px);
@@ -1381,6 +1388,7 @@ textarea {
         margin-right: 100px;
         position: relative;
         background-blend-mode: exclusion, hard-light;
+        font-size: 0;
 
         @media all and (max-width: 1023px) {
             margin-left: 15px;
@@ -1678,6 +1686,9 @@ textarea {
         }
 
         @media all and (max-width: 1023px) {
+            &__in {
+                padding-bottom: 30px;
+            }
             padding-bottom: 0;
         }
     }
@@ -1861,7 +1872,7 @@ textarea {
             padding-top: 100px;
 
             @media all and (max-width: 1023px) {
-                padding-top: 80px;
+                padding-top: 0px;
             }
         }
 
@@ -2054,6 +2065,7 @@ textarea {
         @media all and (max-width: 1023px) {
             padding-left: 15px;
             padding-right: 15px;
+            padding-top: 0;
         }
 
         &__block {
@@ -2734,14 +2746,17 @@ textarea {
         transition: all .3s ease-out;
 
         &.slick-active ~ .slick-active {
-            transform: translateY(-60px) translateX(30px) scale(1.1);
-
+            @media all and (min-width: 1024px) {
+                transform: translateY(-60px) translateX(30px) scale(1.1);
+            }
             @media all and (max-width: 1023px) {
                 transform: unset;
             }
         }
         &.slick-active ~ .slick-active ~ .slick-active {
-            transform: translateX(60px);
+            @media all and (min-width: 1024px) {
+                transform: translateX(60px);
+            }
         }
     }
 }
@@ -2752,4 +2767,7 @@ textarea {
 
 .scroller {
     height: 100vh;
+    @media all and (max-width: 1023px) {
+        display: none;
+    }
 }

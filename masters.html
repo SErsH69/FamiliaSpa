@@ -12,69 +12,74 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="js/slick.min.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
 </head>
 <body class="masters">
     <div class="wrapper"> 
-        <header class="header">
-            <div class="header__bg"><img src="img/masters_bg.jpg" alt=""></div>
-            <div class="header__mob"><img src="img/masters_bg_mob.jpg" alt=""></div>
-            <div class="header__in center_block">
-                <div class="header__top">
-                    <a href="#" class="header__logo"><img src="img/footer_logo.svg" alt=""></a>
-                    <div class="site-panel-wrap">
-                        <div class="burger-wrap">
-                            <div class="burger-btn">меню</div>
-                            <div class="burger-body">
-                                <div class="burger-body__in center_block">
-                                    <div class="burger-body__top">
-                                        <a href="#" class="header__logo"><img src="img/footer_logo.svg" alt=""></a>
-                                        <div class="burger-close-btn">закрыть</div>
-                                    </div>
-                                    <div class="burger-body__bottom">
-                                        <div class="burger-body__info">
-                                            <nav class="burger-body__menu">
-                                                <ul>
-                                                    <li><a href="#">Главная</a></li>
-                                                    <li><a href="#">Услуги</a></li>
-                                                    <li><a href="#">О компании</a></li>
-                                                    <li><a href="#">Наша команда</a></li>
-                                                    <li><a href="#">Акции</a></li>
-                                                    <li><a href="#">Подарочные сертификаты</a></li>
-                                                    <li><a href="#">Контакты</a></li>
-                                                </ul>
-                                            </nav>
+        <div class="header--animated">
+            <header class="header">
+                <div class="header__bg"><img src="img/masters_bg.jpg" alt=""></div>
+                <div class="header__mob"><img src="img/masters_bg_mob.jpg" alt=""></div>
+                <div class="header__in center_block">
+                    <div class="header__top">
+                        <a href="#" class="header__logo"><img src="img/footer_logo.svg" alt=""></a>
+                        <div class="site-panel-wrap">
+                            <div class="burger-wrap">
+                                <div class="burger-btn">меню</div>
+                                <div class="burger-body">
+                                    <div class="burger-body__in center_block">
+                                        <div class="burger-body__top">
+                                            <a href="#" class="header__logo"><img src="img/footer_logo.svg" alt=""></a>
+                                            <div class="burger-close-btn">закрыть</div>
                                         </div>
-                                        <div class="burger-body__contacts">
-                                            <a href="tel:79086414578" class="burger-body__tel">+7‒908‒641‒45‒78</a>
-                                            <a href="mailto:info@familiaspa.ru" class="burger-body__mail">info@familiaspa.ru</a>
-                                            <div class="burger-body__address">г. Иркутск, ул. 6-ая Советская, 80/1</div>
-                                            <div class="burger-body__work">Пн-Вс с 10:00 до 21:00</div>
-                                            <div class="burger-body__socs">
-                                                <a href="#" target="_blank" rel="noopener noreferrer" class="header__soc">
-                                                    <img src="img/icon_vk.svg" alt="Вконтакте">
-                                                    <span>Вконтакте</span>
-                                                </a>
-                                                <a href="#" target="_blank" rel="noopener noreferrer" class="header__soc">
-                                                    <img src="img/icon_wp.svg" alt="WhatsApp">
-                                                    <span>WhatsApp</span>
-                                                </a>
+                                        <div class="burger-body__bottom">
+                                            <div class="burger-body__info">
+                                                <nav class="burger-body__menu">
+                                                    <ul>
+                                                        <li><a href="#">Главная</a></li>
+                                                        <li><a href="#">Услуги</a></li>
+                                                        <li><a href="#">О компании</a></li>
+                                                        <li><a href="#">Наша команда</a></li>
+                                                        <li><a href="#">Акции</a></li>
+                                                        <li><a href="#">Подарочные сертификаты</a></li>
+                                                        <li><a href="#">Контакты</a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                            <div class="burger-body__contacts">
+                                                <a href="tel:79086414578" class="burger-body__tel">+7‒908‒641‒45‒78</a>
+                                                <a href="mailto:info@familiaspa.ru" class="burger-body__mail">info@familiaspa.ru</a>
+                                                <div class="burger-body__address">г. Иркутск, ул. 6-ая Советская, 80/1</div>
+                                                <div class="burger-body__work">Пн-Вс с 10:00 до 21:00</div>
+                                                <div class="burger-body__socs">
+                                                    <a href="#" target="_blank" rel="noopener noreferrer" class="header__soc">
+                                                        <img src="img/icon_vk.svg" alt="Вконтакте">
+                                                        <span>Вконтакте</span>
+                                                    </a>
+                                                    <a href="#" target="_blank" rel="noopener noreferrer" class="header__soc">
+                                                        <img src="img/icon_wp.svg" alt="WhatsApp">
+                                                        <span>WhatsApp</span>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>      
+                        </div>      
+                    </div>
+                    <div class="breadcrums">
+                        <a href="/">Главная</a><span class="breadcrums__splash">/</span>Наши мастера
+                    </div>
+                    <div class="header__bottom">
+                        <h1 class="header__h1">Наши мастера</h1>
+                        <div class="header__text">Предварительные выводы неутешительны: дальнейшее развитие различных форм <br> деятельности выявляет срочную потребность модели развития</div>
+                    </div>
                 </div>
-                <div class="breadcrums">
-                    <a href="/">Главная</a><span class="breadcrums__splash">/</span>Наши мастера
-                </div>
-                <div class="header__bottom">
-                    <h1 class="header__h1">Наши мастера</h1>
-                    <div class="header__text">Предварительные выводы неутешительны: дальнейшее развитие различных форм <br> деятельности выявляет срочную потребность модели развития</div>
-                </div>
-            </div>
-        </header>
+            </header>
+            <div class="scroller"></div>
+        </div>
         <main class="content">
             <div class="sales_block">
                 <div class="sales_block__blocks">
