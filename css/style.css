@@ -1031,16 +1031,22 @@ textarea {
   .main__contacts__map {
     border-radius: 10px;
     overflow: hidden;
-    background: #000;
+    background-image: linear-gradient(to top, #fff, #fff);
     margin-left: 100px;
-    margin-right: 100px; }
+    margin-right: 100px;
+    position: relative;
+    background-blend-mode: exclusion, hard-light; }
     @media all and (max-width: 1023px) {
       .main__contacts__map {
         margin-left: 15px;
         margin-right: 15px; } }
-    @media all and (max-width: 1023px) {
-      .main__contacts__map .mapBlock {
-        height: 435px !important; } }
+    .main__contacts__map .mapBlock {
+      mix-blend-mode: exclusion;
+      position: relative;
+      z-index: 1; }
+      @media all and (max-width: 1023px) {
+        .main__contacts__map .mapBlock {
+          height: 435px !important; } }
 
 .footer {
   margin-top: 100px;
