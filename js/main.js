@@ -46,6 +46,23 @@ $(function(){
       dots: false,
       variableWidth: true
   });
+  $('.js_mast_sl').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: false,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+              variableWidth: true,
+              arrows: true,
+              slidesToShow: 1
+          }
+        },
+      ]
+  });
+  
   (function() {
     
     function coords(str) {
