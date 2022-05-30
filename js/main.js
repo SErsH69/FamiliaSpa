@@ -1,54 +1,54 @@
-$(function () {
+jQuery(function () {
     gsap.registerPlugin(ScrollTrigger);
 
     function burg() {
-        var burgerWr = $('.burger-wrap'),
-            burgerBtn = $('.burger-btn'),
-            burgerBody = $('.burger-body'),
-            burgerCloseBtn = $('.burger-close-btn');
+        var burgerWr = jQuery('.burger-wrap'),
+            burgerBtn = jQuery('.burger-btn'),
+            burgerBody = jQuery('.burger-body'),
+            burgerCloseBtn = jQuery('.burger-close-btn');
 
         burgerBtn.on('click', function () {
-            $(burgerWr).addClass('opened');
-            $('html').addClass('owh');
+            jQuery(burgerWr).addClass('opened');
+            jQuery('html').addClass('owh');
         });
 
         burgerCloseBtn.on('click', function () {
-            $(burgerWr).removeClass('opened');
-            $('html').removeClass('owh');
+            jQuery(burgerWr).removeClass('opened');
+            jQuery('html').removeClass('owh');
         })
     }
 
     burg();
 
-    $(document).on('click', function (e) {
-        if ($(e.target).closest('.burger-btn').length || $(e.target).closest('.burger-body').length)
+    jQuery(document).on('click', function (e) {
+        if (jQuery(e.target).closest('.burger-btn').length || jQuery(e.target).closest('.burger-body').length)
             return;
 
-        $('.burger-wrap').removeClass('opened');
-        $('html').removeClass('owh');
+        jQuery('.burger-wrap').removeClass('opened');
+        jQuery('html').removeClass('owh');
     });
-    $('.js_rev_sl').on("init", function (event, slick) {
-        $(".count").text(parseInt(slick.currentSlide + 1) + ' / ' + slick.slideCount);
+    jQuery('.js_rev_sl').on("init", function (event, slick) {
+        jQuery(".count").text(parseInt(slick.currentSlide + 1) + ' / ' + slick.slideCount);
     });
 
-    $('.js_rev_sl').on("afterChange", function (event, slick, currentSlide) {
-        $(".count").text(parseInt(slick.currentSlide + 1) + ' / ' + slick.slideCount);
+    jQuery('.js_rev_sl').on("afterChange", function (event, slick, currentSlide) {
+        jQuery(".count").text(parseInt(slick.currentSlide + 1) + ' / ' + slick.slideCount);
     });
-    $('.js_rev_sl').slick({
+    jQuery('.js_rev_sl').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: true,
         dots: false,
         fade: true,
     });
-    $('.js_ab_sl').slick({
+    jQuery('.js_ab_sl').slick({
         slidesToShow: 2,
         slidesToScroll: 1,
         arrows: true,
         dots: false,
         variableWidth: true
     });
-    $('.js_mast_sl').slick({
+    jQuery('.js_mast_sl').slick({
         slidesToShow: 4,
         slidesToScroll: 1,
         arrows: false,
@@ -62,7 +62,7 @@ $(function () {
             }
         }, ]
     });
-    $('.slider-for').slick({
+    jQuery('.slider-for').slick({
         // centerMode: true,
         slidesToShow: 3,
         arrows: false,
@@ -76,7 +76,7 @@ $(function () {
             }
         }, ]
     });
-    $('.slider-nav').slick({
+    jQuery('.slider-nav').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         asNavFor: '.slider-for',
@@ -85,12 +85,12 @@ $(function () {
 
 
     function initAnimation() {
-        var headerTextHeight = $('.header__text').innerHeight();
+        var headerTextHeight = jQuery('.header__text').innerHeight();
         console.log(headerTextHeight);
-        $('.main_services__block').each(function() {
-            gsap.to($(this).find('.main_services__l-side'), {
+        jQuery('.main_services__block').each(function() {
+            gsap.to(jQuery(this).find('.main_services__l-side'), {
                 scrollTrigger: {
-                    trigger: $(this),
+                    trigger: jQuery(this),
                     start: 'top bottom-=400',
                     end: 'bottom bottom-=400',
                     scrub: 2,
@@ -98,9 +98,9 @@ $(function () {
                 },
                 y: 0,
             })
-            gsap.to($(this).find('.main_services__r-side'), {
+            gsap.to(jQuery(this).find('.main_services__r-side'), {
                 scrollTrigger: {
-                    trigger: $(this),
+                    trigger: jQuery(this),
                     start: 'top bottom-=400',
                     end: 'bottom bottom-=400',
                     scrub: 2,
@@ -108,6 +108,46 @@ $(function () {
                 },
                 y: 0,
             })
+        });
+        jQuery('.sales_block__block').each(function() {
+            gsap.to(jQuery(this).find('.sales_block__l-side'), {
+                scrollTrigger: {
+                    trigger: jQuery(this),
+                    start: 'top bottom-=400',
+                    end: 'bottom bottom-=400',
+                    scrub: 2,
+                    // markers: true,
+                },
+                y: 0,
+            })
+            gsap.to(jQuery(this).find('.sales_block__r-side'), {
+                scrollTrigger: {
+                    trigger: jQuery(this),
+                    start: 'top bottom-=400',
+                    end: 'bottom bottom-=400',
+                    scrub: 2,
+                    // markers: true,
+                },
+                y: 0,
+            })
+        });
+      	gsap.to('.main_text__l-side', {
+            scrollTrigger: {
+                trigger: '.main_text',
+                start: 'top center',
+                end: 'bottom center',
+                scrub: 2,
+            },
+            y: 0,
+        });
+        gsap.to('.main_text__r-side', {
+            scrollTrigger: {
+                trigger: '.main_text',
+                start: 'top center',
+                end: 'bottom center',
+                scrub: 2,
+            },
+            y: 0,
         });
         gsap.to('.header--animated .header', {
             scrollTrigger: {
@@ -179,4 +219,8 @@ $(function () {
     if (window.innerWidth > 1023) {
         initAnimation();
     }
+    jQuery('.burger-body__menu a[href^="/#"]').click(function() {
+        jQuery('.burger-wrap').removeClass('opened');
+        jQuery('html').removeClass('owh');
+    });
 });

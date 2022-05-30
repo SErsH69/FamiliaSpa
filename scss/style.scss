@@ -1194,6 +1194,9 @@ textarea {
         position: absolute;
         left: 0;
         z-index: 3;
+        @media all and (min-width: 1024px) {
+            transform: translateY(500px);
+        }
 
         @media all and (max-width: 1023px) {
             width: 100%;
@@ -1212,6 +1215,9 @@ textarea {
         margin-left: auto;
         text-align: right;
         font-size: 0;
+        @media all and (min-width: 1024px) {
+            transform: translateY(200px);
+        }
 
         &:before {
             content: '';
@@ -1760,7 +1766,7 @@ textarea {
 
 // contacts end
 // about
-.about {
+.about, .page-template-about {
     .slick-slide {
         margin-left: 10px;
         margin-right: 10px;
@@ -1892,7 +1898,7 @@ textarea {
 
 // about end
 // sales
-.sales {
+.sales, .page-template-sales, .page-template-masters {
     .header {
         &__bottom {
             @media all and (max-width: 1023px) {
@@ -1966,6 +1972,9 @@ textarea {
             position: relative;
             z-index: 2;
             margin-right: 110px;
+            @media all and (min-width: 1024px) {
+                transform: translateY(200px);
+            }
 
             &:before {
                 content: '';
@@ -2022,6 +2031,9 @@ textarea {
             width: calc(100% - 37% - 110px);
             position: relative;
             z-index: 3;
+            @media all and (min-width: 1024px) {
+                transform: translateY(500px);
+            }
 
             @media all and (max-width: 1500px) {
                 width: calc(100% - 37% - 50px);
@@ -2090,7 +2102,7 @@ textarea {
 
 // sales end
 // masters
-.masters {
+.masters, .page-template-masters {
     .header {
         &__bottom {
             @media all and (max-width: 1023px) {
@@ -2416,7 +2428,7 @@ textarea {
 
 // masters end
 // service
-.service {
+.service, .single-services {
     .header {
         &__bottom {
             @media all and (max-width: 1023px) {
