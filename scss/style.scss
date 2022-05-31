@@ -2856,3 +2856,24 @@ textarea {
         display: none;
     }
 }
+.breadcrums br {
+	display: none;
+}
+.main_serv .slick-prev, .main_serv .slick-next {
+	border: 0;
+}
+
+@media all and (max-width: 1023px) {
+  .mob_page_start .header__bottom {
+	margin-top: 0;
+  }
+  .mob_page_start .header__in {
+  	padding-bottom: 0;
+  }
+  .main_serv__text {
+  	padding-bottom: 40px;
+  }
+  .main_serv .slick-prev {
+  	z-index: 2;
+  }
+}

@@ -1251,7 +1251,7 @@ textarea {
     align-items: center;
     text-decoration: none;
     margin-left: 50px;
-    font-family: 'Mulish', sans-serif;
+    font-family: 'Mulish', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -2126,3 +2126,19 @@ textarea {
   @media all and (max-width: 1023px) {
     .scroller {
       display: none; } }
+
+.breadcrums br {
+  display: none; }
+
+.main_serv .slick-prev, .main_serv .slick-next {
+  border: 0; }
+
+@media all and (max-width: 1023px) {
+  .mob_page_start .header__bottom {
+    margin-top: 0; }
+  .mob_page_start .header__in {
+    padding-bottom: 0; }
+  .main_serv__text {
+    padding-bottom: 40px; }
+  .main_serv .slick-prev {
+    z-index: 2; } }
