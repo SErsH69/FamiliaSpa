@@ -1,4 +1,8 @@
 jQuery(function () {
+    jQuery('.main__contacts__hide').click(function() {
+        console.log(1)
+        jQuery(this).remove();
+    });
     gsap.registerPlugin(ScrollTrigger);
 
     function burg() {
@@ -65,6 +69,7 @@ jQuery(function () {
     jQuery('.slider-for').slick({
         // centerMode: true,
         slidesToShow: 3,
+        slidesToScroll: 1,
         arrows: false,
         // variableWidth: true,
         asNavFor: '.slider-nav',
@@ -79,6 +84,7 @@ jQuery(function () {
     jQuery('.slider-nav').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
+        initialSlide: 1,
         asNavFor: '.slider-for',
         dots: false
     });
@@ -98,16 +104,16 @@ jQuery(function () {
                 },
                 y: 0,
             })
-            gsap.to(jQuery(this).find('.main_services__r-side'), {
-                scrollTrigger: {
-                    trigger: jQuery(this),
-                    start: 'top bottom-=400',
-                    end: 'bottom bottom-=400',
-                    scrub: 2,
-                    // markers: true,
-                },
-                y: 0,
-            })
+            // gsap.to(jQuery(this).find('.main_services__r-side'), {
+            //     scrollTrigger: {
+            //         trigger: jQuery(this),
+            //         start: 'top bottom-=400',
+            //         end: 'bottom bottom-=400',
+            //         scrub: 2,
+            //         // markers: true,
+            //     },
+            //     y: 0,
+            // })
         });
         jQuery('.sales_block__block').each(function() {
             gsap.to(jQuery(this).find('.sales_block__l-side'), {
@@ -120,26 +126,26 @@ jQuery(function () {
                 },
                 y: 0,
             })
-            gsap.to(jQuery(this).find('.sales_block__r-side'), {
-                scrollTrigger: {
-                    trigger: jQuery(this),
-                    start: 'top bottom-=400',
-                    end: 'bottom bottom-=400',
-                    scrub: 2,
-                    // markers: true,
-                },
-                y: 0,
-            })
+            // gsap.to(jQuery(this).find('.sales_block__r-side'), {
+            //     scrollTrigger: {
+            //         trigger: jQuery(this),
+            //         start: 'top bottom-=400',
+            //         end: 'bottom bottom-=400',
+            //         scrub: 2,
+            //         // markers: true,
+            //     },
+            //     y: 0,
+            // })
         });
-      	gsap.to('.main_text__l-side', {
-            scrollTrigger: {
-                trigger: '.main_text',
-                start: 'top center',
-                end: 'bottom center',
-                scrub: 2,
-            },
-            y: 0,
-        });
+      	// gsap.to('.main_text__l-side', {
+        //     scrollTrigger: {
+        //         trigger: '.main_text',
+        //         start: 'top center',
+        //         end: 'bottom center',
+        //         scrub: 2,
+        //     },
+        //     y: 0,
+        // });
         gsap.to('.main_text__r-side', {
             scrollTrigger: {
                 trigger: '.main_text',
@@ -149,72 +155,72 @@ jQuery(function () {
             },
             y: 0,
         });
-        gsap.to('.header--animated .header', {
-            scrollTrigger: {
-                trigger: '.header--animated',
-                start: 'top top',
-                end: 'bottom bottom',
-                scrub: 2,
-                // markers: true,
-                pin: true,
-                pinSpacer: false
-            },
-            y: 0,
-        });
-        gsap.to('.header--animated .header__h1', {
-            scrollTrigger: {
-                trigger: '.header--animated .header',
-                start: 'bottom bottom',
-                end: 'bottom top',
-                scrub: 2,
-                // markers: true
-            },
-            y: '-10vh',
-        })
-        gsap.to('.header--animated .header__text', {
-            scrollTrigger: {
-                trigger: '.header--animated .header',
-                start: 'bottom bottom',
-                end: 'bottom top',
-                scrub: 2,
-                // markers: true
-            },
-            y: '-15vh',
-            opacity: '0',
-        })
-        gsap.to('.header--animated .main__contacts__blocks', {
-            scrollTrigger: {
-                trigger: '.header--animated .header',
-                start: 'bottom bottom',
-                end: 'bottom top',
-                scrub: 2,
-                // markers: true
-            },
-            y: '-15vh',
-            opacity: '0',
-        })
-        gsap.to('.header--animated .header__info', {
-            scrollTrigger: {
-                trigger: '.header--animated .header',
-                start: 'bottom bottom',
-                end: 'bottom top',
-                scrub: 2,
-                // markers: true
-            },
-            y: () => {
-                return ((window.innerHeight / 100 * 15) + headerTextHeight) * -1;
-            }
-        })
-        gsap.to('.header--animated .breadcrums', {
-            scrollTrigger: {
-                trigger: '.header--animated .header',
-                start: 'bottom bottom',
-                end: 'bottom top',
-                scrub: 2,
-                // markers: true
-            },
-            opacity: '0'
-        })
+        // gsap.to('.header--animated .header', {
+        //     scrollTrigger: {
+        //         trigger: '.header--animated',
+        //         start: 'top top',
+        //         end: 'bottom bottom',
+        //         scrub: 2,
+        //         // markers: true,
+        //         pin: true,
+        //         pinSpacer: false
+        //     },
+        //     y: 0,
+        // });
+        // gsap.to('.header--animated .header__h1', {
+        //     scrollTrigger: {
+        //         trigger: '.header--animated .header',
+        //         start: 'bottom bottom',
+        //         end: 'bottom top',
+        //         scrub: 2,
+        //         // markers: true
+        //     },
+        //     y: '-10vh',
+        // })
+        // gsap.to('.header--animated .header__text', {
+        //     scrollTrigger: {
+        //         trigger: '.header--animated .header',
+        //         start: 'bottom bottom',
+        //         end: 'bottom top',
+        //         scrub: 2,
+        //         // markers: true
+        //     },
+        //     y: '-15vh',
+        //     opacity: '0',
+        // })
+        // gsap.to('.header--animated .main__contacts__blocks', {
+        //     scrollTrigger: {
+        //         trigger: '.header--animated .header',
+        //         start: 'bottom bottom',
+        //         end: 'bottom top',
+        //         scrub: 2,
+        //         // markers: true
+        //     },
+        //     y: '-15vh',
+        //     opacity: '0',
+        // })
+        // gsap.to('.header--animated .header__info', {
+        //     scrollTrigger: {
+        //         trigger: '.header--animated .header',
+        //         start: 'bottom bottom',
+        //         end: 'bottom top',
+        //         scrub: 2,
+        //         // markers: true
+        //     },
+        //     y: () => {
+        //         return ((window.innerHeight / 100 * 15) + headerTextHeight) * -1;
+        //     }
+        // })
+        // gsap.to('.header--animated .breadcrums', {
+        //     scrollTrigger: {
+        //         trigger: '.header--animated .header',
+        //         start: 'bottom bottom',
+        //         end: 'bottom top',
+        //         scrub: 2,
+        //         // markers: true
+        //     },
+        //     opacity: '0'
+        // })
     }
     if (window.innerWidth > 1023) {
         initAnimation();
@@ -222,5 +228,8 @@ jQuery(function () {
     jQuery('.burger-body__menu a[href^="/#"]').click(function() {
         jQuery('.burger-wrap').removeClass('opened');
         jQuery('html').removeClass('owh');
+    });
+    jQuery(document).ready(function() {
+      jQuery('a[href^="#yclients"]').addClass('ms_booking');
     });
 });
