@@ -66,13 +66,13 @@ jQuery(function () {
             }
         }, ]
     });
-    jQuery('.slider-for').slick({
+    var mastersSlider = jQuery('.slider-for').slick({
         // centerMode: true,
         slidesToShow: 3,
         slidesToScroll: 1,
         arrows: false,
         // variableWidth: true,
-        asNavFor: '.slider-nav',
+        // asNavFor: '.slider-nav',
         responsive: [{
             breakpoint: 1024,
             settings: {
@@ -81,14 +81,20 @@ jQuery(function () {
             }
         }, ]
     });
-    jQuery('.slider-nav').slick({
+    var navSlider = jQuery('.slider-nav').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         initialSlide: 1,
-        asNavFor: '.slider-for',
+        // asNavFor: '.slider-for',
         dots: false
     });
-
+    mastersSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        navSlider.slick('slickGoTo', nextSlide+1);
+    });
+    navSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        mastersSlider.slick('slickGoTo', nextSlide-1);
+    });
+    
 
     function initAnimation() {
         var headerTextHeight = jQuery('.header__text').innerHeight();

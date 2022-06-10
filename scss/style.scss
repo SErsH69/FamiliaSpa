@@ -2888,7 +2888,8 @@ textarea {
     &__img {
         border-radius: 10px;
         overflow: hidden;
-        // height: 328px;
+        height: 328px;
+        font-size: 0;
         margin-bottom: 30px;
 
         @media all and (max-width: 1023px) {
@@ -2932,10 +2933,17 @@ textarea {
     &__block {
         position: relative;
         transition: all .3s ease-out;
-
+        @media all and (min-width: 1024px) {
+            .main_serv__work {
+                display: none;
+            }
+        }
         &.slick-active ~ .slick-active {
             @media all and (min-width: 1024px) {
                 transform: translateY(-60px) translateX(30px) scale(1.1);
+                .main_serv__work {
+                    display: block;
+                }
             }
             @media all and (max-width: 1023px) {
                 transform: unset;
@@ -2944,6 +2952,9 @@ textarea {
         &.slick-active ~ .slick-active ~ .slick-active {
             @media all and (min-width: 1024px) {
                 transform: translateX(60px);
+                .main_serv__work {
+                    display: none;
+                }
             }
         }
     }
